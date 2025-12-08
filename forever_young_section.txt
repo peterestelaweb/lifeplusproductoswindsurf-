@@ -1,0 +1,300 @@
+            <!-- Sección Forever Young -->
+            <div id="forever-young" class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title"><i class="fas fa-spa"></i> Forever Young</h2>
+                    <p>7 productos disponibles</p>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4144_1@2x.jpg"
+                                 alt="Forever Young Day Crème SPF 25"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4144</span>
+                            <span class="product-price">€73.25</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Day Crème SPF 25</h3>
+                        <p class="product-format">50 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4144/forever-young-day-crème-spf-25" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4129_1@2x.jpg"
+                                 alt="Forever Young Gentle Cream Cleanser"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4129</span>
+                            <span class="product-price">€32.00</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Gentle Cream Cleanser</h3>
+                        <p class="product-format">150 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4129/forever-young-gentle-cream-cleanser" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4130_1@2x.jpg"
+                                 alt="Forever Young Rejuvenating Eye Crème"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4130</span>
+                            <span class="product-price">€29.25</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Rejuvenating Eye Crème</h3>
+                        <p class="product-format">15 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4130/forever-young-rejuvenating-eye-crème" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4131_1@2x.jpg"
+                                 alt="Forever Young Radiance Serum"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4131</span>
+                            <span class="product-price">€71.50</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Radiance Serum</h3>
+                        <p class="product-format">30 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4131/forever-young-radiance-serum" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4132_1@2x.jpg"
+                                 alt="Forever Young Rich Moisturizing Crème"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4132</span>
+                            <span class="product-price">€64.50</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Rich Moisturizing Crème</h3>
+                        <p class="product-format">50 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4132/forever-young-rich-moisturizing-crème" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4133_1@2x.jpg"
+                                 alt="Forever Young Strengthen and Restore Shampoo"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4133</span>
+                            <span class="product-price">€18.75</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Strengthen and Restore Shampoo</h3>
+                        <p class="product-format">250 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4133/forever-young-strengthen-and-restore-shampoo" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4134_1@2x.jpg"
+                                 alt="Forever Young Repair and Protect Conditioner"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4134</span>
+                            <span class="product-price">€35.75</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Repair and Protect Conditioner</h3>
+                        <p class="product-format">250 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4134/forever-young-repair-and-protect-conditioner" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Cuidado Personal -->
+            <div id="personal" class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title"><i class="fas fa-hand-sparkles"></i> Cuidado Personal</h2>
+                    <p>9 productos disponibles</p>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_6695_1@2x.jpg"
+                                 alt="Pasta dentífrica del árbol del té (sin flúor)"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Pasta</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">6695</span>
+                            <span class="product-price">€20.25</span>
+                        </div>
+                        <h3 class="product-name">Pasta dentífrica del árbol del té (sin flúor)</h3>
+                        <p class="product-format">170g</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/6695/pasta-dentífrica-del-árbol-del-té-sin-flúor" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_1021_1@2x.jpg"
+                                 alt="MSM Plus Vital Care Lotion"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>MSM</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">1021</span>
+                            <span class="product-price">€26.50</span>
+                        </div>
+                        <h3 class="product-name">MSM Plus Vital Care Lotion</h3>
+                        <p class="product-format">242 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/1021/msm-plus-vital-care-lotion" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_6134_1@2x.jpg"
+                                 alt="Lifeplus Wonder Gel"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Lifeplus</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">6134</span>
+                            <span class="product-price">€38.00</span>
+                        </div>
+                        <h3 class="product-name">Lifeplus Wonder Gel</h3>
+                        <p class="product-format">114 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/6134/lifeplus-wonder-gel" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_6654_1@2x.jpg"
+                                 alt="Natural Gold Hand & Body Bar"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Natural</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">6654</span>
+                            <span class="product-price">€7.75</span>
+                        </div>
+                        <h3 class="product-name">Natural Gold Hand & Body Bar</h3>
+                        <p class="product-format">113g</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/6654/natural-gold-hand-and-body-bar" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_2632_1@2x.jpg"
+                                 alt="Natural Hand Cream"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Natural</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">2632</span>
+                            <span class="product-price">€24.25</span>
+                        </div>
+                        <h3 class="product-name">Natural Hand Cream</h3>
+                        <p class="product-format">100 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/2632/natural-hand-cream" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_2631_1@2x.jpg"
+                                 alt="Natural Body Wash"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Natural</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">2631</span>
+                            <span class="product-price">€17.00</span>
+                        </div>
+                        <h3 class="product-name">Natural Body Wash</h3>
+                        <p class="product-format">500 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/2631/natural-body-wash" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_2630_1@2x.jpg"
+                                 alt="Natural Hand & Body Lotion"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Natural</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">2630</span>
+                            <span class="product-price">€21.75</span>
+                        </div>
+                        <h3 class="product-name">Natural Hand & Body Lotion</h3>
+                        <p class="product-format">300 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/2630/natural-hand-and-body-lotion" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_2629_1@2x.jpg"
+                                 alt="Natural Hand Wash"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Natural</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">2629</span>
+                            <span class="product-price">€18.25</span>
+                        </div>
+                        <h3 class="product-name">Natural Hand Wash</h3>
+                        <p class="product-format">500 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/2629/natural-hand-wash" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_2633_1@2x.jpg"
+                                 alt="Natural Deodorant"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Natural</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">2633</span>
+                            <span class="product-price">€20.25</span>
+                        </div>

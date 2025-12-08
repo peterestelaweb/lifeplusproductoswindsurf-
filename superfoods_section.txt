@@ -1,0 +1,200 @@
+            <!-- Sección Superfoods Solis -->
+            <div id="superfoods" class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title"><i class="fas fa-seedling"></i> Superfoods Solis</h2>
+                    <p>4 productos disponibles</p>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_3483_1@2x.jpg"
+                                 alt="SOLIS Green Medley"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>SOLIS</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">3483</span>
+                            <span class="product-price">€69.75</span>
+                        </div>
+                        <h3 class="product-name">SOLIS Green Medley</h3>
+                        <p class="product-format">171g</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/3483/solis-green-medley" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_3484_1@2x.jpg"
+                                 alt="SOLIS Purple Flash®"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>SOLIS</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">3484</span>
+                            <span class="product-price">€79.75</span>
+                        </div>
+                        <h3 class="product-name">SOLIS Purple Flash®</h3>
+                        <p class="product-format">183g</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/3484/solis-purple-flash" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_3485_1@2x.jpg"
+                                 alt="SOLIS Cacao Boost"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>SOLIS</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">3485</span>
+                            <span class="product-price">€49.50</span>
+                        </div>
+                        <h3 class="product-name">SOLIS Cacao Boost</h3>
+                        <p class="product-format">210g</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/3485/solis-cacao-boost" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_3525_1@2x.jpg"
+                                 alt="SOLIS Golden Milk"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>SOLIS</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">3525</span>
+                            <span class="product-price">€50.00</span>
+                        </div>
+                        <h3 class="product-name">SOLIS Golden Milk</h3>
+                        <p class="product-format">182g</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/3525/solis-golden-milk" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Forever Young -->
+            <div id="forever-young" class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title"><i class="fas fa-spa"></i> Forever Young</h2>
+                    <p>7 productos disponibles</p>
+                </div>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4144_1@2x.jpg"
+                                 alt="Forever Young Day Crème SPF 25"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4144</span>
+                            <span class="product-price">€73.25</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Day Crème SPF 25</h3>
+                        <p class="product-format">50 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4144/forever-young-day-crème-spf-25" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4129_1@2x.jpg"
+                                 alt="Forever Young Gentle Cream Cleanser"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4129</span>
+                            <span class="product-price">€32.00</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Gentle Cream Cleanser</h3>
+                        <p class="product-format">150 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4129/forever-young-gentle-cream-cleanser" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4130_1@2x.jpg"
+                                 alt="Forever Young Rejuvenating Eye Crème"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4130</span>
+                            <span class="product-price">€29.25</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Rejuvenating Eye Crème</h3>
+                        <p class="product-format">15 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4130/forever-young-rejuvenating-eye-crème" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4131_1@2x.jpg"
+                                 alt="Forever Young Radiance Serum"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4131</span>
+                            <span class="product-price">€71.50</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Radiance Serum</h3>
+                        <p class="product-format">30 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4131/forever-young-radiance-serum" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4132_1@2x.jpg"
+                                 alt="Forever Young Rich Moisturizing Crème"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4132</span>
+                            <span class="product-price">€64.50</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Rich Moisturizing Crème</h3>
+                        <p class="product-format">50 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4132/forever-young-rich-moisturizing-crème" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://ww1.lifeplus.com/images/products/prodpic_4133_1@2x.jpg"
+                                 alt="Forever Young Strengthen and Restore Shampoo"
+                                 class="product-image"
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Forever</text></svg>';">
+                        </div>
+                        <div class="product-header">
+                            <span class="product-code">4133</span>
+                            <span class="product-price">€18.75</span>
+                        </div>
+                        <h3 class="product-name">Forever Young Strengthen and Restore Shampoo</h3>
+                        <p class="product-format">250 ml</p>
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4133/forever-young-strengthen-and-restore-shampoo" target="_blank" class="product-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Comprar en Tienda</span>
+                        </a>
+                    </div>
+                    <div class="product-card">

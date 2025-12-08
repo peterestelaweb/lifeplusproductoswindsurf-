@@ -1,0 +1,4 @@
+// Categoría: nutricionales
+// Total: 60 productos
+<div id="nutricionales" class="category-section">
+    <div class="category-header">
