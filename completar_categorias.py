@@ -119,8 +119,7 @@ products_by_category = {
         {"code": "2632", "name": "Natural Hand Cream", "price": "€24.25", "format": "100 ml"},
         {"code": "2631", "name": "Natural Body Wash", "price": "€17.00", "format": "500 ml"},
         {"code": "2630", "name": "Natural Hand & Body Lotion", "price": "€21.75", "format": "300 ml"},
-        {"code": "2629", "name": "Natural Hand Wash", "price": "€18.25", "format": "500 ml"},
-        {"code": "2633", "name": "Natural Deodorant", "price": "€20.25", "format": "100g"}
+        {"code": "2629", "name": "Natural Hand Wash", "price": "€18.25", "format": "500 ml"}
     ],
 
     'accesorios': [
