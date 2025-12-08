@@ -1,0 +1,30 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Archivos de entorno virtual
+venv/
+env/
+ENV/
+
+# Archivos de Claude
+.claude/
+
+# Archivos de texto extraídos
+extracted_text.txt
+
+# Archivos PDF (puedes incluirlos si quieres)
+*.pdf
