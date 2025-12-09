@@ -90,8 +90,7 @@ products_by_category = {
         {"code": "4150", "name": "Be Recharged en sobres – Cítricos", "price": "€99.00", "price_asap": "€93.55", "format": "30 x 20.8g"},
         {"code": "4158", "name": "Be Refueled – Sabor a Chocolate", "price": "€81.50", "price_asap": "€77.02", "format": "804g"},
         {"code": "4156", "name": "Be Refueled – Sabor a Vainilla", "price": "€81.50", "price_asap": "€77.02", "format": "804g"},
-        {"code": "4157", "name": "Be Refueled – Sabor específico", "price": "€81.50", "price_asap": "€77.02", "format": "804g"},
-    ],
+      ],
 
     'superfoods': [
         {"code": "3483", "name": "SOLIS Green Medley", "price": "€69.75", "price_asap": "€65.91", "format": "171g"},

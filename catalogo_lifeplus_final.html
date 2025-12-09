@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifePlus Catálogo Premium - 118 Productos de Bienestar</title>
+    <title>LifePlus Catálogo Premium - 111 Productos de Bienestar</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -343,6 +343,61 @@
             color: var(--secondary-green);
             font-size: 0.7rem;
         }
+
+        /* Welcome Section Category Preview Styles */
+        .category-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .category-preview-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-smooth);
+            padding: var(--space-md);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .category-preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-green);
+        }
+
+        .category-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-md);
+            background: var(--lifeplus-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .category-icon-wrapper i {
+            font-size: 3rem;
+            color: white;
+        }
+
+        .category-preview-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-preview-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
         </style>
 </head>
 <body>
@@ -388,10 +443,91 @@
 
         <div class="main-content">
             <!-- Welcome Section -->
-                        <!-- Sección Nutricionales -->
+            <div id="welcome" class="category-section">
+                <div class="category-header">
+                    <h2 class="category-title"><i class="fas fa-home"></i> Bienvenido a LifePlus Catálogo Premium</h2>
+                    <p>Encuentra todos nuestros productos de bienestar en un solo lugar</p>
+                </div>
+
+                <div class="category-preview-grid">
+                    <div class="category-preview-card" onclick="scrollToCategory('nutricionales')">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h3>Nutricionales</h3>
+                        <p>Suplementos esenciales para tu salud</p>
+                    </div>
+
+                    <div class="category-preview-card" onclick="scrollToCategory('proteinas')">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Proteínas</h3>
+                        <p>Proteínas de alta calidad</p>
+                    </div>
+
+                    <div class="category-preview-card" onclick="scrollToCategory('deportiva')">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3>Deporte</h3>
+                        <p>Rendimiento y recuperación deportiva</p>
+                    </div>
+
+                    <div class="category-preview-card" onclick="scrollToCategory('packs')">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h3>Packs</h3>
+                        <p>Combos especiales con descuento</p>
+                    </div>
+
+                    <div class="category-preview-card" onclick="scrollToCategory('superfoods')">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Superfoods</h3>
+                        <p>Alimentos nutritivos y naturales</p>
+                    </div>
+
+                    <div class="category-preview-card" onclick="scrollToCategory('forever-young')">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-hourglass-half"></i>
+                        </div>
+                        <h3>Forever Young</h3>
+                        <p>Antienvejecimiento y juventud</p>
+                    </div>
+
+                    <div class="category-preview-card" onclick="scrollToCategory('personal')">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Personal</h3>
+                        <p>Productos personalizados para ti</p>
+                    </div>
+
+                    <div class="category-preview-card" onclick="scrollToCategory('accesorios')">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <h3>Accesorios</h3>
+                        <p>Herramientas y complementos</p>
+                    </div>
+
+                    <div class="category-preview-card" onclick="scrollToCategory('agua')">
+                        <div class="category-icon-wrapper">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Agua</h3>
+                        <p>Sistemas de purificación</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Nutricionales -->
             <div id="nutricionales" class="category-section">
                 <div class="category-header">
-                    <h2 class="category-title"><i class="fas fa-fa-pills"></i> Nutricionales</h2>
+                    <h2 class="category-title"><i class="fas fa-pills"></i> Nutricionales</h2>
                     <p>59 productos disponibles</p>
                 </div>
 
@@ -4955,6 +5091,22 @@
                 top: 100,
                 behavior: 'smooth'
             });
+        }
+
+        function scrollToCategory(categoryId) {
+            // First show the category
+            showCategory(categoryId);
+
+            // Then scroll to the category section smoothly
+            setTimeout(() => {
+                const element = document.getElementById(categoryId);
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 300);
         }
 
         // Event listeners para botones de navegación
