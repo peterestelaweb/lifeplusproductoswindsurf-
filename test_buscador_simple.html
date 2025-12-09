@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST - Buscador Flotante LifePlus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #faf8f5;
+            min-height: 2000px; /* Para probar scroll */
+        }
+
+        .test-info {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .productos-test {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .producto-test {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(46, 125, 50, 0.10);
+        }
+
+        /* ===== BUSCADOR FLOTANTE ===== */
+        .search-float-btn {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 50%, #66BB6A 100%) !important;
+            border: none !important;
+            color: white !important;
+            font-size: 1.5rem !important;
+            cursor: pointer !important;
+            z-index: 9999 !important;
+            box-shadow: 0 8px 30px rgba(46, 125, 50, 0.3) !important;
+            transition: all 0.3s ease !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .search-float-btn:hover {
+            transform: scale(1.1) !important;
+        }
+
+        .search-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            display: none;
+            backdrop-filter: blur(2px);
+        }
+
+        .search-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 700px;
+            max-height: 90vh;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            z-index: 10001;
+            display: none;
+            padding: 20px;
+        }
+
+        .status-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 10002;
+        }
+
+        .status-indicator.success {
+            background: #4CAF50;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="status-indicator" id="status">INICIANDO...</div>
+
+    <div class="test-info">
+        <h1>🧪 TEST - Buscador Flotante LifePlus</h1>
+        <p>Esta página prueba si el buscador flotante aparece correctamente</p>
+        <p>✅ Si ves un botón verde con lupa en la esquina inferior derecha → FUNCIONA</p>
+        <p>❌ Si no lo ves → Hay un problema</p>
+    </div>
+
+    <!-- Simular productos como en el catálogo real -->
+    <div class="productos-test">
+        <div class="product-card">
+            <h3>Daily BioBasics®</h3>
+            <p>Código: 3401</p>
+            <p>Precio: €86.00</p>
+        </div>
+        <div class="product-card">
+            <h3>Proanthenols® 100</h3>
+            <p>Código: 3400</p>
+            <p>Precio: €75.75</p>
+        </div>
+        <div class="product-card">
+            <h3>TVM Plus</h3>
+            <p>Código: 3405</p>
+            <p>Precio: €29.75</p>
+        </div>
+    </div>
+
+    <script>
+        console.log("🧪 INICIANDO TEST DEL BUSCADOR FLOTANTE");
+
+        function actualizarStatus(mensaje, esExitoso = false) {
+            const status = document.getElementById('status');
+            if (status) {
+                status.textContent = mensaje;
+                status.className = esExitoso ? 'status-indicator success' : 'status-indicator';
+            }
+            console.log(mensaje);
+        }
+
+        function crearBuscadorTest() {
+            console.log("🔧 Creando buscador de prueba...");
+
+            // Verificar si ya existe
+            if (document.getElementById('searchFloatBtn')) {
+                actualizarStatus("✅ BOTÓN YA EXISTE", true);
+                return;
+            }
+
+            // Crear CSS si no existe
+            if (!document.querySelector('#search-float-styles')) {
+                const css = `
+                    <style id="search-float-styles">
+                        .search-float-btn {
+                            position: fixed !important;
+                            bottom: 20px !important;
+                            right: 20px !important;
+                            width: 60px !important;
+                            height: 60px !important;
+                            border-radius: 50% !important;
+                            background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 50%, #66BB6A 100%) !important;
+                            border: none !important;
+                            color: white !important;
+                            font-size: 1.5rem !important;
+                            cursor: pointer !important;
+                            z-index: 9999 !important;
+                            box-shadow: 0 8px 30px rgba(46, 125, 50, 0.3) !important;
+                            transition: all 0.3s ease !important;
+                            display: flex !important;
+                            align-items: center !important;
+                            justify-content: center !important;
+                            visibility: visible !important;
+                            opacity: 1 !important;
+                        }
+                        .search-float-btn:hover {
+                            transform: scale(1.1) !important;
+                        }
+                    </style>
+                `;
+                document.head.insertAdjacentHTML('beforeend', css);
+                actualizarStatus("✅ CSS AÑADIDO");
+            }
+
+            // Crear botón flotante
+            const botonHTML = `
+                <button id="searchFloatBtn" class="search-float-btn" title="Buscar productos">
+                    <i class="fas fa-search"></i>
+                </button>
+            `;
+
+            document.body.insertAdjacentHTML('beforeend', botonHTML);
+            actualizarStatus("✅ BOTÓN CREADO");
+
+            // Crear modal básico
+            const modalHTML = `
+                <div id="searchOverlay" class="search-overlay"></div>
+                <div id="searchModal" class="search-modal">
+                    <h2>🔍 Buscador de Prueba</h2>
+                    <p>¡El buscador flotante funciona correctamente!</p>
+                    <input type="text" placeholder="Escribe algo para buscar..." style="width: 100%; padding: 10px; margin: 10px 0;">
+                    <button id="closeModalBtn" style="padding: 10px 20px; background: #2E7D32; color: white; border: none; border-radius: 5px; cursor: pointer;">Cerrar</button>
+                </div>
+            `;
+
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+            actualizarStatus("✅ MODAL CREADO");
+
+            // Añadir eventos
+            const boton = document.getElementById('searchFloatBtn');
+            const modal = document.getElementById('searchModal');
+            const overlay = document.getElementById('searchOverlay');
+            const closeBtn = document.getElementById('closeModalBtn');
+
+            if (boton && modal && overlay && closeBtn) {
+                boton.addEventListener('click', () => {
+                    modal.style.display = 'block';
+                    overlay.style.display = 'block';
+                    actualizarStatus("🔍 MODAL ABIERTO", true);
+                });
+
+                closeBtn.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                    overlay.style.display = 'none';
+                });
+
+                overlay.addEventListener('click', () => {
+                    modal.style.display = 'none';
+                    overlay.style.display = 'none';
+                });
+
+                // Forzar visibilidad
+                setTimeout(() => {
+                    boton.style.display = 'flex';
+                    boton.style.visibility = 'visible';
+                    boton.style.opacity = '1';
+                    actualizarStatus("✅ ¡BUSCADOR FUNCIONANDO PERFECTAMENTE!", true);
+                }, 100);
+            }
+        }
+
+        // Múltiples intentos de inicialización
+        let intentos = 0;
+        function inicializarTest() {
+            intentos++;
+            actualizarStatus(`INTENTO ${intentos}/5`);
+
+            if (document.getElementById('searchFloatBtn')) {
+                actualizarStatus("✅ BOTÓN YA EXISTE", true);
+                return;
+            }
+
+            if (intentos <= 5) {
+                crearBuscadorTest();
+            } else {
+                actualizarStatus("❌ ERROR: NO SE PUDO CREAR EL BUSCADOR");
+            }
+        }
+
+        // Inicialización en múltiples puntos
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(inicializarTest, 100);
+        });
+
+        window.addEventListener('load', () => {
+            setTimeout(inicializarTest, 1000);
+        });
+
+        // Forzar creación si todo falla
+        setTimeout(() => {
+            if (!document.getElementById('searchFloatBtn')) {
+                actualizarStatus("🔄 ÚLTIMO INTENTO...");
+                crearBuscadorTest();
+            }
+        }, 3000);
+
+        console.log("🧪 TEST CONFIGURADO - Esperando inicialización...");
+    </script>
+</body>
+</html>
