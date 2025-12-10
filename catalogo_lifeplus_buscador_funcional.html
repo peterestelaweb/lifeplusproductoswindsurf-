@@ -814,10 +814,10 @@
         /* Responsive */
         @media (max-width: 768px) {
             .search-float-btn {
-                bottom: 170px !important;
-                right: 15px !important;
-                width: 55px !important;
-                height: 55px !important;
+                bottom: 140px !important;
+                right: 20px !important;
+                width: 50px !important;
+                height: 50px !important;
                 font-size: 1.4rem !important;
             }
 
@@ -6131,7 +6131,7 @@
                     font-size: 1.2rem;
                 }
 
-                .whatsapp-tooltip, .contact-tooltip {
+                .whatsapp-tooltip, .contact-tooltip, .search-tooltip {
                     display: none;
                 }
 
@@ -6193,6 +6193,18 @@
 
                 .floating-contact-btn i {
                     font-size: 1rem;
+                }
+
+                .search-float-btn {
+                    bottom: 125px !important;
+                    right: 15px !important;
+                    width: 45px !important;
+                    height: 45px !important;
+                    font-size: 1.2rem !important;
+                }
+
+                .search-tooltip {
+                    display: none !important;
                 }
             }
         `;
@@ -6859,33 +6871,13 @@
                 }
             });
 
-            // Forzar visibilidad del botón
+            // Forzar visibilidad del botón (sin cambiar posición, respetando media queries CSS)
             setTimeout(() => {
                 const btnBusqueda = document.getElementById('searchFloatBtn');
                 if (btnBusqueda) {
-                    btnBusqueda.style.cssText = `
-                position: fixed !important;
-                bottom: 180px !important;
-                right: 20px !important;
-                width: 60px !important;
-                height: 60px !important;
-                border-radius: 50% !important;
-                background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FDC830 100%) !important;
-                border: none !important;
-                color: white !important;
-                font-size: 1.6rem !important;
-                cursor: pointer !important;
-                z-index: 9998 !important;
-                box-shadow: 0 8px 35px rgba(255, 107, 53, 0.4) !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                transform: scale(1) !important;
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-                outline: none !important;
-            `;
+                    // Solo forzar visibilidad, la posición la controla CSS
+                    btnBusqueda.style.visibility = 'visible';
+                    btnBusqueda.style.opacity = '1';
 
                     // Hacer parpadear para confirmar funcionamiento
                     let parpadeo = 0;
