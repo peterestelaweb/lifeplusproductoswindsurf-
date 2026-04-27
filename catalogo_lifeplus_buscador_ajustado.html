@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifePlus Catálogo Premium con Buscador Flotante - 111 Productos</title>
+    <title>LifePlus Catálogo con Buscador Flotante Ajustado - ¡Visible y Claro!</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -399,650 +399,255 @@
             line-height: 1.4;
         }
         
-
-/* ===== BUSCADOR FLOTANTE INTELIGENTE ===== */
-/* CSS PARA BUSCADOR FLOTANTE INTELIGENTE LIFEPLUS */
-
-/* ===== BOTÓN FLOTANTE ===== */
+/* ===== BUSCADOR FLOTANTE AJUSTADO ===== */
 .search-float-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--lifeplus-gradient);
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 999;
-    box-shadow: var(--shadow-medium);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: fixed !important;
+    bottom: 90px !important;  /* Mover hacia arriba para evitar solapamiento con WhatsApp */
+    right: 20px !important;
+    width: 70px !important;     /* Un poco más grande */
+    height: 70px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FDC830 100%) !important; /* Naranja para diferenciar de verde WhatsApp */
+    border: none !important;
+    color: white !important;
+    font-size: 1.8rem !important;   /* Icono más grande */
+    cursor: pointer !important;
+    z-index: 10000 !important;      /* Z-index alto pero debajo de WhatsApp */
+    box-shadow: 0 8px 40px rgba(255, 107, 53, 0.4) !important; /* Sombra naranja */
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    outline: none !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
 }
 
 .search-float-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 40px rgba(46, 125, 50, 0.3);
+    transform: scale(1.1) !important;
+    box-shadow: 0 12px 50px rgba(255, 107, 53, 0.6) !important;
 }
 
 .search-float-btn:active {
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
-/* ===== OVERLAY ===== */
+.search-float-btn::after {
+    content: 'BUSCAR';
+    position: absolute;
+    bottom: -35px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: white !important;
+    padding: 5px 10px !important;
+    border-radius: 15px !important;
+    font-size: 11px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: 10001 !important;
+    pointer-events: none !important;
+}
+
+.search-float-btn:hover::after {
+    opacity: 1 !important;
+}
+
+.search-float-btn i {
+    font-size: 1.8rem !important;
+    color: white !important;
+}
+
+/* Modal de búsqueda mejorado */
 .search-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    display: none;
-    backdrop-filter: blur(2px);
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    z-index: 20000 !important;
+    display: none !important;
+    backdrop-filter: blur(5px) !important;
 }
 
-/* ===== MODAL PRINCIPAL ===== */
 .search-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 700px;
-    max-height: 90vh;
-    background: var(--bg-white);
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.95);
-    transition: all 0.3s ease;
-    pointer-events: none;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    max-width: 700px !important;
+    max-height: 90vh !important;
+    background: white !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+    z-index: 20001 !important;
+    display: none !important;
+    padding: 30px !important;
+    overflow-y: auto !important;
 }
 
-.search-modal.modal-active {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    pointer-events: all;
-}
-
-/* ===== HEADER DEL MODAL ===== */
 .search-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-lg);
-    border-bottom: 1px solid var(--bg-light-cream);
-    background: var(--gradient-hero);
-    color: white;
-    border-radius: 12px 12px 0 0;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 15px !important;
+    border-bottom: 2px solid #f0f0f0 !important;
 }
 
 .search-modal-header h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
+    color: #FF6B35 !important;
+    font-size: 1.8rem !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
 }
 
-.close-modal-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.close-modal-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: rotate(90deg);
-}
-
-/* ===== BODY DEL MODAL ===== */
-.search-modal-body {
-    padding: var(--space-lg);
-    flex: 1;
-    overflow-y: auto;
-    max-height: calc(90vh - 180px);
-}
-
-/* ===== CAMPO DE BÚSQUEDA ===== */
 .search-input-container {
-    position: relative;
-    margin-bottom: var(--space-md);
-}
-
-.search-input-icon {
-    position: absolute;
-    left: var(--space-md);
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    z-index: 2;
+    position: relative !important;
+    margin-bottom: 20px !important;
 }
 
 .search-input {
-    width: 100%;
-    padding: var(--space-md) var(--space-md) var(--space-md) 3rem;
-    border: 2px solid var(--light-green);
-    border-radius: var(--radius-smooth);
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    transition: all 0.3s ease;
-    background: var(--bg-white);
-    height: 50px;
+    width: 100% !important;
+    padding: 15px 50px 15px 50px !important;
+    border: 2px solid #FF6B35 !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    transition: all 0.3s ease !important;
+    box-sizing: border-box !important;
 }
 
 .search-input:focus {
-    outline: none;
-    border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+    outline: none !important;
+    border-color: #F7931E !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1) !important;
 }
 
-.clear-search-btn {
-    position: absolute;
-    right: var(--space-md);
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: var(--text-secondary);
-    cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    z-index: 2;
-}
-
-.clear-search-btn:hover {
-    background: var(--bg-light-cream);
-    color: var(--text-primary);
-}
-
-/* ===== FILTROS ===== */
-.search-filters {
-    margin-bottom: var(--space-md);
-}
-
-.search-filters label {
-    display: block;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: var(--space-sm);
+.search-input-icon {
+    position: absolute !important;
+    left: 15px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #FF6B35 !important;
+    font-size: 1.2rem !important;
+    z-index: 2 !important;
 }
 
 .category-filter {
-    width: 100%;
-    padding: var(--space-sm) var(--space-md);
-    border: 2px solid var(--light-green);
-    border-radius: var(--radius-smooth);
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    background: var(--bg-white);
-    height: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    width: 100% !important;
+    padding: 15px 20px !important;
+    border: 2px solid #FF6B35 !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    background: white !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 20px !important;
+    box-sizing: border-box !important;
 }
 
 .category-filter:focus {
-    outline: none;
-    border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+    outline: none !important;
+    border-color: #F7931E !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1) !important;
 }
 
-/* ===== INFORMACIÓN DE RESULTADOS ===== */
-.search-results-info {
-    margin-bottom: var(--space-md);
-    padding: var(--space-sm);
-    background: var(--bg-light-cream);
-    border-radius: var(--radius-smooth);
-}
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-
-.results-count {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    font-weight: 500;
-}
-
-/* ===== MENSAJES ===== */
-.search-messages {
-    margin-bottom: var(--space-md);
-}
-
-.initial-message,
-.no-results-message {
-    text-align: center;
-    padding: var(--space-lg);
-    color: var(--text-secondary);
-    font-style: italic;
-    background: var(--bg-light-cream);
-    border-radius: var(--radius-smooth);
-    border: 2px dashed var(--light-green);
-}
-
-.initial-message i,
-.no-results-message i {
-    font-size: 2rem;
-    color: var(--secondary-green);
-    margin-bottom: var(--space-sm);
-    display: block;
-}
-
-.no-results-message {
-    display: none;
-}
-
-/* ===== CONTENEDOR DE RESULTADOS ===== */
 .search-results {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--space-md);
-    max-height: 400px;
-    overflow-y: auto;
-    padding: var(--space-sm);
-    background: var(--bg-light-cream);
-    border-radius: var(--radius-smooth);
+    max-height: 400px !important;
+    overflow-y: auto !important;
+    border: 1px solid #f0f0f0 !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    background: #fafafa !important;
 }
 
-/* ===== TARJETA DE PRODUCTO ===== */
 .search-result-product {
-    background: var(--bg-white);
-    border-radius: var(--radius-smooth);
-    padding: var(--space-md);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    display: flex;
-    flex-direction: column;
-    box-shadow: var(--shadow-soft);
+    background: white !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    margin-bottom: 10px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    border: 2px solid transparent !important;
 }
 
 .search-result-product:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
-    border-color: var(--primary-green);
+    border-color: #FF6B35 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.2) !important;
 }
 
-.result-image {
-    width: 100%;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bg-light-cream);
-    border-radius: var(--radius-smooth);
-    margin-bottom: var(--space-sm);
-    overflow: hidden;
-}
-
-.result-image img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: var(--radius-smooth);
-}
-
-.result-info {
-    flex: 1;
-}
-
-.result-name {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
-}
-
-.result-category {
-    font-size: 0.85rem;
-    color: var(--secondary-green);
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-}
-
-.result-format {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    margin-bottom: var(--space-sm);
-}
-
-.result-prices {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    margin-bottom: var(--space-sm);
-}
-
-.result-price {
-    font-weight: 700;
-    color: var(--primary-green);
-    font-size: 0.9rem;
-}
-
-.result-price-asap {
-    font-weight: 600;
-    color: var(--secondary-green);
-    font-size: 0.8rem;
-}
-
-.result-link {
-    display: inline-block;
-    color: var(--primary-green);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    text-align: center;
-    padding: 0.5rem var(--space-sm);
-    border: 2px solid var(--primary-green);
-    border-radius: var(--radius-smooth);
-    background: transparent;
-}
-
-.result-link:hover {
-    background: var(--primary-green);
-    color: white;
-    transform: translateY(-1px);
-}
-
-/* ===== FOOTER DEL MODAL ===== */
 .search-modal-footer {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--space-sm);
-    padding: var(--space-lg);
-    border-top: 1px solid var(--bg-light-cream);
-    background: var(--bg-light-cream);
-    border-radius: 0 0 12px 12px;
-}
-
-.btn {
-    padding: var(--space-sm) var(--space-lg);
-    border: none;
-    border-radius: var(--radius-smooth);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    border-top: 2px solid #f0f0f0 !important;
 }
 
 .btn-primary {
-    background: var(--primary-green);
-    color: white;
+    background: #FF6B35 !important;
+    color: white !important;
 }
 
 .btn-primary:hover {
-    background: var(--dark-green);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-soft);
+    background: #F7931E !important;
 }
 
 .btn-secondary {
-    background: var(--text-secondary);
-    color: white;
+    background: #6c757d !important;
+    color: white !important;
 }
 
 .btn-secondary:hover {
-    background: var(--text-primary);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-soft);
+    background: #5a6268 !important;
 }
 
-/* ===== RESPONSIVIDAD ===== */
+.btn {
+    padding: 12px 25px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
 
-/* Tablet */
+/* Responsive */
 @media (max-width: 768px) {
     .search-float-btn {
-        width: 55px;
-        height: 55px;
-        bottom: 15px;
-        right: 15px;
-        font-size: 1.3rem;
+        bottom: 80px !important;  /* Ajustar para móviles */
+        right: 15px !important;
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .search-float-btn::after {
+        font-size: 10px !important;
+        bottom: -30px !important;
     }
 
     .search-modal {
-        width: 85%;
-        max-height: 85vh;
-    }
-
-    .search-modal-header h2 {
-        font-size: 1.3rem;
-    }
-
-    .search-modal-body {
-        padding: var(--space-md);
-    }
-
-    .search-results {
-        grid-template-columns: 1fr;
-        max-height: 300px;
-    }
-
-    .search-modal-footer {
-        flex-direction: column;
-    }
-
-    .btn {
-        justify-content: center;
-        width: 100%;
+        width: 95% !important;
+        padding: 20px !important;
     }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-    .search-float-btn {
-        width: 50px;
-        height: 50px;
-        bottom: 12px;
-        right: 12px;
-        font-size: 1.2rem;
-    }
-
-    .search-modal {
-        width: 95%;
-        max-height: 95vh;
-        top: 50%;
-        left: 50%;
-    }
-
-    .search-modal-header {
-        padding: var(--space-md);
-    }
-
-    .search-modal-header h2 {
-        font-size: 1.2rem;
-    }
-
-    .search-modal-body {
-        padding: var(--space-sm);
-        max-height: calc(95vh - 150px);
-    }
-
-    .search-input {
-        height: 45px;
-        padding: var(--space-sm) var(--space-sm) var(--space-sm) 2.5rem;
-    }
-
-    .category-filter {
-        height: 45px;
-        padding: var(--space-sm);
-    }
-
-    .result-image {
-        height: 100px;
-    }
-
-    .result-name {
-        font-size: 0.9rem;
-    }
-
-    .result-category {
-        font-size: 0.8rem;
-    }
-
-    .result-format {
-        font-size: 0.75rem;
-    }
-
-    .search-modal-footer {
-        padding: var(--space-md);
-        gap: var(--space-sm);
-    }
-
-    .btn {
-        padding: var(--space-sm) var(--space-md);
-        font-size: 0.9rem;
-    }
-}
-
-/* Mobile Landscape */
-@media (max-width: 768px) and (orientation: landscape) {
-    .search-modal {
-        max-height: 90vh;
-    }
-
-    .search-modal-body {
-        max-height: calc(90vh - 140px);
-    }
-
-    .search-results {
-        max-height: 200px;
-    }
-}
-
-/* ===== ACCESSIBILIDAD ===== */
-@media (prefers-reduced-motion: reduce) {
-    .search-float-btn,
-    .search-modal,
-    .search-result-product,
-    .btn,
-    .search-input,
-    .category-filter {
-        transition: none;
-    }
-}
-
-/* ===== DARK MODE SUPPORT (opcional) ===== */
-@media (prefers-color-scheme: dark) {
-    /* El diseño actual no usa dark mode, pero si se necesita en el futuro */
-    .search-modal {
-        background: var(--text-primary);
-        color: var(--bg-white);
-    }
-}
-
-/* ===== IMPRESIÓN ===== */
-@media print {
-    .search-float-btn,
-    .search-overlay,
-    .search-modal {
-        display: none !important;
-    }
-}
-
-/* ===== UTILIDADES ===== */
-.scrollbar-custom {
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-green) var(--bg-light-cream);
-}
-
-.scrollbar-custom::-webkit-scrollbar {
-    width: 6px;
-}
-
-.scrollbar-custom::-webkit-scrollbar-track {
-    background: var(--bg-light-cream);
-    border-radius: 3px;
-}
-
-.scrollbar-custom::-webkit-scrollbar-thumb {
-    background: var(--primary-green);
-    border-radius: 3px;
-}
-
-.scrollbar-custom::-webkit-scrollbar-thumb:hover {
-    background: var(--dark-green);
-}
-
-/* Aplicar scrollbars personalizados */
-.search-results,
-.search-modal-body {
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-green) var(--bg-light-cream);
-}
-
-.search-results::-webkit-scrollbar,
-.search-modal-body::-webkit-scrollbar {
-    width: 6px;
-}
-
-.search-results::-webkit-scrollbar-track,
-.search-modal-body::-webkit-scrollbar-track {
-    background: var(--bg-light-cream);
-    border-radius: 3px;
-}
-
-.search-results::-webkit-scrollbar-thumb,
-.search-modal-body::-webkit-scrollbar-thumb {
-    background: var(--primary-green);
-    border-radius: 3px;
-}
-
-.search-results::-webkit-scrollbar-thumb:hover,
-.search-modal-body::-webkit-scrollbar-thumb:hover {
-    background: var(--dark-green);
-}
-
-
-        .floating-button {
-            position: fixed !important;
-            bottom: 30px !important;
-            right: 30px !important;
-            z-index: 9999 !important;
-        }
-
-
-        /* Mejoras de visibilidad */
-        .floating-button:hover {
-            transform: translateY(-2px) scale(1.05);
-        }
-
-        .search-result strong {
-            color: var(--primary-green);
-        }
-
-        .product-image-container img {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product:hover .product-image-container img {
-            transform: translateY(-5px);
-        }
 </style>
 </head>
 <body>
@@ -5755,7 +5360,13 @@
         }
 
         // Event listeners para botones de navegación
-        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navegación principal
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    showCategory(category);
+                });
             });
 
             // Botón de volver arriba
@@ -5783,7 +5394,11 @@
         });
 
         // Prevenir que los enlaces de productos interfieran con la navegación
-        
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.product-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
             });
         });
 
@@ -6579,521 +6194,177 @@
                 }
             }
         });
-    
+    </script>
+<script>
 
-// ===== BUSCADOR FLOTANTE INTELIGENTE =====
-// BUSCADOR FLOTANTE INTELIGENTE PARA LIFEPLUS
-// Implementación completa siguiendo las especificaciones
+// ===== BUSCADOR FLOTANTE AJUSTADO =====
+function crearBuscadorAjustado() {
+    console.log("🔍 Creando buscador flotante ajustado...");
 
-// Objeto para almacenar productos extraídos del DOM
-let productosLifePlus = [];
-let categoriasLifePlus = [];
+    // Eliminar botones existentes
+    const botonesExistentes = document.querySelectorAll('button[id="searchFloatBtn"], .search-float-btn');
+    botonesExistentes.forEach(btn => btn.remove());
 
-// 1. FUNCIÓN PARA EXTRAER PRODUCTOS DEL DOM
-function extraerProductos() {
-    console.log("Extrayendo productos del DOM...");
+    // Crear botón flotante ajustado
+    const boton = document.createElement('button');
+    boton.id = 'searchFloatBtn';
+    boton.className = 'search-float-btn';
+    boton.title = 'Buscar productos LifePlus - Click para abrir buscador';
+    boton.innerHTML = '<i class="fas fa-search"></i>';
 
-    const categorySections = document.querySelectorAll('.category-section');
+    // Crear modal mejorado
+    const modalHTML = `
+        <div id="searchOverlay" class="search-overlay"></div>
+        <div id="searchModal" class="search-modal">
+            <div class="search-modal-header">
+                <h2><i class="fas fa-search"></i> Buscar Productos</h2>
+                <button id="closeModalBtn" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">✕</button>
+            </div>
 
-    categorySections.forEach(section => {
-        const categoryId = section.id;
-        const categoryTitle = section.querySelector('.category-title');
+            <div class="search-input-container">
+                <i class="fas fa-search search-input-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="¿Qué producto buscas? Escribe nombre, código o categoría...">
+            </div>
 
-        if (!categoryTitle || categoryId === 'welcome') return;
+            <select id="categoryFilter" class="category-filter">
+                <option value="todas">🏠 Todas las categorías</option>
+                <option value="nutricionales">💊 Nutricionales</option>
+                <option value="proteinas">💪 Proteínas</option>
+                <option value="deportiva">🏃 Deporte</option>
+                <option value="packs">📦 Packs</option>
+                <option value="superfoods">🌿 Superfoods</option>
+                <option value="forever-young">⏳ Forever Young</option>
+                <option value="personal">👤 Personal</option>
+                <option value="accesorios">🎒 Accesorios</option>
+                <option value="agua">💧 Agua</option>
+            </select>
 
-        const categoryName = categoryTitle.textContent.trim();
-        categoriasLifePlus.push({
-            id: categoryId,
-            nombre: categoryName
-        });
+            <div class="search-results-info">
+                <span id="resultsCount" style="color: #666; font-size: 14px;">Escribe para buscar productos...</span>
+            </div>
 
-        const productCards = section.querySelectorAll('.product-card');
+            <div id="searchResults" class="search-results"></div>
 
-        productCards.forEach(card => {
-            try {
-                const productCode = card.querySelector('.product-code')?.textContent.trim();
-                const productName = card.querySelector('.product-name')?.textContent.trim();
-                const productFormat = card.querySelector('.product-format')?.textContent.trim();
-                const productImage = card.querySelector('.product-image')?.src;
-                const productLink = card.querySelector('.product-link')?.href;
-
-                // Extraer precios
-                let precioNormal = "";
-                let precioASAP = "";
-                const priceElements = card.querySelectorAll('.product-price, .product-price-asap');
-
-                priceElements.forEach((elem, index) => {
-                    if (elem.classList.contains('product-price')) {
-                        precioNormal = elem.textContent.trim();
-                    } else if (elem.classList.contains('product-price-asap')) {
-                        precioASAP = elem.textContent.trim();
-                    }
-                });
-
-                if (productCode && productName) {
-                    productosLifePlus.push({
-                        id: productCode,
-                        nombre: productName,
-                        categoria: categoryId,
-                        categoriaNombre: categoryName,
-                        formato: productFormat,
-                        imagen: productImage,
-                        precioNormal: precioNormal,
-                        precioASAP: precioASAP,
-                        url: productLink,
-                        // Nombre normalizado para búsqueda fuzzy
-                        nombreNormalizado: normalizarTexto(productName),
-                        categoriaNormalizada: normalizarTexto(categoryName)
-                    });
-                }
-            } catch (error) {
-                console.error("Error extrayendo producto:", error);
-            }
-        });
-    });
-
-    console.log(`Se extrajeron ${productosLifePlus.length} productos`);
-    console.log(`Se encontraron ${categoriasLifePlus.length} categorías`);
-}
-
-// 2. FUNCIÓN PARA NORMALIZAR TEXTO (quitar acentos, caracteres especiales)
-function normalizarTexto(texto) {
-    return texto.toLowerCase()
-        .replace(/[áàäâ]/g, 'a')
-        .replace(/[éèëê]/g, 'e')
-        .replace(/[íìïî]/g, 'i')
-        .replace(/[óòöô]/g, 'o')
-        .replace(/[úùüû]/g, 'u')
-        .replace(/[ñ]/g, 'n')
-        .replace(/[ç]/g, 'c')
-        .replace(/[®™°]/g, '')
-        .replace(/[^\w\s]/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
-}
-
-// 3. ALGORITMO LEVENSHTEIN DISTANCE para búsqueda fuzzy
-function levenshteinDistance(str1, str2) {
-    const matrix = [];
-
-    for (let i = 0; i <= str2.length; i++) {
-        matrix[i] = [i];
-    }
-
-    for (let j = 0; j <= str1.length; j++) {
-        matrix[0][j] = j;
-    }
-
-    for (let i = 1; i <= str2.length; i++) {
-        for (let j = 1; j <= str1.length; j++) {
-            if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
-                matrix[i][j] = matrix[i - 1][j - 1];
-            } else {
-                matrix[i][j] = Math.min(
-                    matrix[i - 1][j - 1] + 1,
-                    matrix[i][j - 1] + 1,
-                    matrix[i - 1][j] + 1
-                );
-            }
-        }
-    }
-
-    return matrix[str2.length][str1.length];
-}
-
-// 4. FUNCIÓN PARA CALCULAR SIMILITUD
-function calcularSimilitud(str1, str2) {
-    const distance = levenshteinDistance(str1, str2);
-    const longer = Math.max(str1.length, str2.length);
-    if (longer === 0) return 1.0;
-    return (longer - distance) / longer;
-}
-
-// 5. FUNCIÓN DE BÚSQUEDA PRINCIPAL
-function buscarProductos(textoBusqueda, categoriaId = 'todas') {
-    if (!textoBusqueda || textoBusqueda.trim() === '') {
-        // Si no hay texto, mostrar productos de la categoría seleccionada
-        if (categoriaId === 'todas') {
-            return productosLifePlus;
-        } else {
-            return productosLifePlus.filter(p => p.categoria === categoriaId);
-        }
-    }
-
-    const textoNormalizado = normalizarTexto(textoBusqueda);
-    const palabrasBusqueda = textoNormalizado.split(' ').filter(p => p.length > 0);
-
-    const resultados = productosLifePlus.map(producto => {
-        // Filtrar por categoría si no es "todas"
-        if (categoriaId !== 'todas' && producto.categoria !== categoriaId) {
-            return null;
-        }
-
-        let scoreMaximo = 0;
-        let matchTipo = '';
-
-        // Buscar coincidencia exacta
-        if (producto.nombreNormalizado.includes(textoNormalizado)) {
-            scoreMaximo = 1.0;
-            matchTipo = 'exacto';
-        } else {
-            // Calcular similitud fuzzy para cada palabra
-            palabrasBusqueda.forEach(palabra => {
-                if (palabra.length < 2) return; // Ignorar palabras muy cortas
-
-                // Buscar en nombre del producto
-                const similitudNombre = calcularSimilitud(palabra, producto.nombreNormalizado);
-                if (similitudNombre > scoreMaximo) {
-                    scoreMaximo = similitudNombre;
-                    matchTipo = 'nombre_fuzzy';
-                }
-
-                // Buscar coincidencias parciales
-                if (producto.nombreNormalizado.includes(palabra) && scoreMaximo < 0.8) {
-                    scoreMaximo = 0.8;
-                    matchTipo = 'parcial';
-                }
-
-                // Buscar en categoría
-                if (producto.categoriaNormalizada.includes(palabra) && scoreMaximo < 0.6) {
-                    scoreMaximo = 0.6;
-                    matchTipo = 'categoria';
-                }
-            });
-        }
-
-        // Umbral mínimo de similitud
-        if (scoreMaximo >= 0.6) {
-            return {
-                ...producto,
-                score: scoreMaximo,
-                matchTipo: matchTipo
-            };
-        }
-
-        return null;
-    }).filter(p => p !== null)
-     .sort((a, b) => b.score - a.score); // Ordenar por relevancia
-
-    return resultados;
-}
-
-// 6. FUNCIÓN PARA RENDERIZAR RESULTADOS
-function renderizarResultados(resultados) {
-    const contenedorResultados = document.getElementById('searchResults');
-    const contadorResultados = document.getElementById('resultsCount');
-    const mensajeNoResultados = document.getElementById('noResultsMessage');
-
-    // Actualizar contador
-    if (contadorResultados) {
-        contadorResultados.textContent = `${resultados.length} producto${resultados.length !== 1 ? 's' : ''} encontrado${resultados.length !== 1 ? 's' : ''}`;
-    }
-
-    // Limpiar contenedor
-    contenedorResultados.innerHTML = '';
-
-    // Mostrar/ocultar mensaje de no resultados
-    if (mensajeNoResultados) {
-        mensajeNoResultados.style.display = resultados.length === 0 ? 'block' : 'none';
-    }
-
-    if (resultados.length === 0) {
-        return;
-    }
-
-    // Renderizar productos en grid
-    resultados.forEach(producto => {
-        const productoCard = crearProductoCard(producto);
-        contenedorResultados.appendChild(productoCard);
-    });
-}
-
-// 7. FUNCIÓN PARA CREAR TARJETA DE PRODUCTO
-function crearProductoCard(producto) {
-    const card = document.createElement('div');
-    card.className = 'search-result-product';
-    card.onclick = () => {
-        window.open(producto.url, '_blank');
-        setTimeout(() => cerrarModal(), 500); // Cerrar modal después de abrir link
-    };
-
-    const precioHTML = producto.precioASAP ?
-        `<div class="result-prices">
-            <span class="result-price">${producto.precioNormal}</span>
-            <span class="result-price-asap">${producto.precioASAP}</span>
-        </div>` :
-        `<div class="result-prices">
-            <span class="result-price">${producto.precioNormal}</span>
-        </div>`;
-
-    card.innerHTML = `
-        <div class="result-image">
-            <img src="${producto.imagen}" alt="${producto.nombre}"
-                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22 viewBox=%220 0 80 80%22><rect width=%2280%22 height=%2280%22 fill=%22%23f0f0f0%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 font-family=%22Arial%22 font-size=%2210%22 fill=%22%23666%22>Sin imagen</text></svg>';">
-        </div>
-        <div class="result-info">
-            <h3 class="result-name">${producto.nombre}</h3>
-            <p class="result-category">${producto.categoriaNombre}</p>
-            <p class="result-format">${producto.formato}</p>
-            ${precioHTML}
-            <a href="${producto.url}" target="_blank" class="result-link">Ver producto →</a>
+            <div class="search-modal-footer">
+                <button id="clearBtn" class="btn btn-secondary">🗑️ Limpiar</button>
+                <button id="closeFooterBtn" class="btn btn-primary">✅ Cerrar</button>
+            </div>
         </div>
     `;
 
-    return card;
+    document.body.insertAdjacentHTML('beforeend', boton);
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    console.log("✅ Botón y modal ajustados creados");
+
+    // Configurar eventos
+    configurarEventosBuscador();
+
+    // Forzar estilos y hacer visible
+    setTimeout(() => {
+        const btnVerificado = document.getElementById('searchFloatBtn');
+        if (btnVerificado) {
+            btnVerificado.style.cssText = `
+                position: fixed !important;
+                bottom: 90px !important;
+                right: 20px !important;
+                width: 70px !important;
+                height: 70px !important;
+                border-radius: 50% !important;
+                background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FDC830 100%) !important;
+                border: none !important;
+                color: white !important;
+                font-size: 1.8rem !important;
+                cursor: pointer !important;
+                z-index: 10000 !important;
+                box-shadow: 0 8px 40px rgba(255, 107, 53, 0.4) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                transform: scale(1) !important;
+            `;
+
+            // Hacerlo parpadear una vez para llamar atención
+            setTimeout(() => {
+                let parpadeo = 0;
+                const intervalo = setInterval(() => {
+                    parpadeo++;
+                    btnVerificado.style.transform = parpadeo % 2 === 0 ? 'scale(1.2)' : 'scale(1)';
+                    if (parpadeo > 6) {
+                        clearInterval(intervalo);
+                        btnVerificado.style.transform = 'scale(1)';
+                        console.log("✅ ¡Buscador flotante ajustado y visible!");
+                    }
+                }, 300);
+            }, 2000);
+        }
+    }, 100);
+
+    return true;
 }
 
-// 8. FUNCIONES PARA MANEJAR MODAL
-function abrirModal() {
+function configurarEventosBuscador() {
+    const boton = document.getElementById('searchFloatBtn');
     const modal = document.getElementById('searchModal');
     const overlay = document.getElementById('searchOverlay');
-    const botonFlotante = document.getElementById('searchFloatBtn');
-    const inputBusqueda = document.getElementById('searchInput');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const closeFooterBtn = document.getElementById('closeFooterBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const searchInput = document.getElementById('searchInput');
 
-    if (modal && overlay && botonFlotante) {
-        overlay.style.display = 'block';
-        modal.classList.add('modal-active');
-        botonFlotante.style.visibility = 'hidden';
+    if (boton && modal && overlay && closeBtn) {
+        // Abrir modal
+        boton.addEventListener('click', () => {
+            modal.style.display = 'block';
+            overlay.style.display = 'block';
+            if (searchInput) searchInput.focus();
+        });
 
-        // Autofocus en el input
-        setTimeout(() => {
-            if (inputBusqueda) {
-                inputBusqueda.focus();
-                inputBusqueda.value = '';
-                ejecutarBusqueda();
-            }
-        }, 100);
+        // Cerrar modal
+        closeBtn.addEventListener('click', cerrarModal);
+        closeFooterBtn.addEventListener('click', cerrarModal);
+        overlay.addEventListener('click', cerrarModal);
+
+        // Limpiar búsqueda
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                if (searchInput) searchInput.value = '';
+                document.getElementById('resultsCount').textContent = 'Escribe para buscar productos...';
+                document.getElementById('searchResults').innerHTML = '<p style="text-align: center; color: #999; padding: 20px;">💡 Escribe el nombre de un producto para buscar</p>';
+            });
+        }
+
+        // Cerrar con ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') cerrarModal();
+        });
     }
 }
 
 function cerrarModal() {
     const modal = document.getElementById('searchModal');
     const overlay = document.getElementById('searchOverlay');
-    const botonFlotante = document.getElementById('searchFloatBtn');
-
-    if (modal && overlay && botonFlotante) {
-        overlay.style.display = 'none';
-        modal.classList.remove('modal-active');
-        botonFlotante.style.visibility = 'visible';
-    }
+    if (modal) modal.style.display = 'none';
+    if (overlay) overlay.style.display = 'none';
 }
 
-// 9. FUNCIÓN DE EJECUCIÓN DE BÚSQUEDA
-let timeoutBusqueda;
-function ejecutarBusqueda() {
-    clearTimeout(timeoutBusqueda);
+// Inicialización en múltiples momentos
+setTimeout(crearBuscadorAjustado, 1000);
+setTimeout(crearBuscadorAjustado, 3000);
 
-    timeoutBusqueda = setTimeout(() => {
-        const inputBusqueda = document.getElementById('searchInput');
-        const selectCategoria = document.getElementById('categoryFilter');
-
-        if (!inputBusqueda) return;
-
-        const texto = inputBusqueda.value;
-        const categoriaId = selectCategoria ? selectCategoria.value : 'todas';
-
-        const resultados = buscarProductos(texto, categoriaId);
-        renderizarResultados(resultados);
-
-        // Mostrar mensaje inicial si no hay texto
-        const mensajeInicial = document.getElementById('initialMessage');
-        if (mensajeInicial) {
-            mensajeInicial.style.display = texto.trim() === '' ? 'block' : 'none';
-        }
-    }, 300); // Debounce de 300ms
-}
-
-// 10. FUNCIÓN PARA LIMPIAR BÚSQUEDA
-function limpiarBusqueda() {
-    const inputBusqueda = document.getElementById('searchInput');
-    const selectCategoria = document.getElementById('categoryFilter');
-
-    if (inputBusqueda) inputBusqueda.value = '';
-    if (selectCategoria) selectCategoria.value = 'todas';
-
-    ejecutarBusqueda();
-}
-
-// 11. FUNCIÓN PRINCIPAL DE INICIALIZACIÓN
-function inicializarBuscadorFlotante() {
-    console.log("Inicializando buscador flotante...");
-
-    // Extraer productos del DOM
-    extraerProductos();
-
-    // Crear HTML del buscador
-    crearHTMLBuscador();
-
-    // Agregar event listeners
-    agregarEventListeners();
-
-    console.log("Buscador flotante inicializado correctamente");
-}
-
-// 12. FUNCIÓN PARA CREAR HTML DEL BUSCADOR
-function crearHTMLBuscador() {
-    // Crear botón flotante
-    const botonHTML = `
-        <button id="searchFloatBtn" class="search-float-btn" title="Buscar productos">
-            <i class="fas fa-search"></i>
-        </button>
-    `;
-
-    // Crear overlay y modal
-    const modalHTML = `
-        <div id="searchOverlay" class="search-overlay"></div>
-
-        <div id="searchModal" class="search-modal">
-            <div class="search-modal-header">
-                <h2><i class="fas fa-search"></i> Buscar Productos</h2>
-                <button id="closeModalBtn" class="close-modal-btn" title="Cerrar">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <div class="search-modal-body">
-                <div class="search-input-container">
-                    <i class="fas fa-search search-input-icon"></i>
-                    <input type="text" id="searchInput" class="search-input"
-                           placeholder="Buscar productos..." autocomplete="off">
-                    <button id="clearSearchBtn" class="clear-search-btn" style="display: none;" title="Limpiar">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-
-                <div class="search-filters">
-                    <label for="categoryFilter">Filtrar por categoría:</label>
-                    <select id="categoryFilter" class="category-filter">
-                        <option value="todas">Todas las categorías</option>
-                    </select>
-                </div>
-
-                <div class="search-results-info">
-                    <span id="resultsCount" class="results-count">0 productos encontrados</span>
-                </div>
-
-                <div class="search-messages">
-                    <div id="initialMessage" class="initial-message">
-                        <i class="fas fa-info-circle"></i>
-                        Empieza a escribir para buscar productos
-                    </div>
-                    <div id="noResultsMessage" class="no-results-message" style="display: none;">
-                        <i class="fas fa-search"></i>
-                        No encontramos productos que coincidan con tu búsqueda.<br>
-                        Intenta con otro nombre o categoría.
-                    </div>
-                </div>
-
-                <div id="searchResults" class="search-results"></div>
-            </div>
-
-            <div class="search-modal-footer">
-                <button id="clearAllBtn" class="btn btn-secondary">
-                    <i class="fas fa-eraser"></i> Limpiar
-                </button>
-                <button id="closeFooterBtn" class="btn btn-primary">
-                    <i class="fas fa-times"></i> Cerrar
-                </button>
-            </div>
-        </div>
-    `;
-
-    // Insertar en el body
-    document.body.insertAdjacentHTML('beforeend', botonHTML + modalHTML);
-
-    // Poblar categorías en el select
-    const categorySelect = document.getElementById('categoryFilter');
-    if (categorySelect && categoriasLifePlus.length > 0) {
-        categoriasLifePlus.forEach(cat => {
-            const option = document.createElement('option');
-            option.value = cat.id;
-            option.textContent = cat.nombre;
-            categorySelect.appendChild(option);
-        });
-    }
-}
-
-// 13. FUNCIÓN PARA AGREGAR EVENT LISTENERS
-function agregarEventListeners() {
-    // Botón flotante
-    const botonFlotante = document.getElementById('searchFloatBtn');
-    if (botonFlotante) {
-        botonFlotante.addEventListener('click', abrirModal);
-    }
-
-    // Cerrar modal
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const closeFooterBtn = document.getElementById('closeFooterBtn');
-    const overlay = document.getElementById('searchOverlay');
-
-    if (closeModalBtn) closeModalBtn.addEventListener('click', cerrarModal);
-    if (closeFooterBtn) closeFooterBtn.addEventListener('click', cerrarModal);
-    if (overlay) overlay.addEventListener('click', cerrarModal);
-
-    // Búsqueda
-    const inputBusqueda = document.getElementById('searchInput');
-    const clearSearchBtn = document.getElementById('clearSearchBtn');
-    const clearAllBtn = document.getElementById('clearAllBtn');
-    const categoryFilter = document.getElementById('categoryFilter');
-
-    if (inputBusqueda) {
-        inputBusqueda.addEventListener('input', () => {
-            const tieneTexto = inputBusqueda.value.trim().length > 0;
-            if (clearSearchBtn) {
-                clearSearchBtn.style.display = tieneTexto ? 'block' : 'none';
-            }
-            ejecutarBusqueda();
-        });
-
-        inputBusqueda.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                // Opcional: enfocar primer resultado
-            }
-        });
-    }
-
-    if (clearSearchBtn) {
-        clearSearchBtn.addEventListener('click', () => {
-            if (inputBusqueda) inputBusqueda.value = '';
-            clearSearchBtn.style.display = 'none';
-            ejecutarBusqueda();
-            if (inputBusqueda) inputBusqueda.focus();
-        });
-    }
-
-    if (clearAllBtn) {
-        clearAllBtn.addEventListener('click', limpiarBusqueda);
-    }
-
-    if (categoryFilter) {
-        categoryFilter.addEventListener('change', ejecutarBusqueda);
-    }
-
-    // Cerrar con ESC
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            cerrarModal();
-        }
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(crearBuscadorAjustado, 2000);
     });
 }
 
-// 14. INICIALIZAR CUANDO EL DOM ESTÉ LISTO
-document.addEventListener('DOMContentLoaded', () => {
-    // Esperar un poco a que la página cargue completamente
-    setTimeout(() => {
-        inicializarBuscadorFlotante();
-    }, 1000);
+window.addEventListener('load', () => {
+    setTimeout(crearBuscadorAjustado, 4000);
 });
 
-// También inicializar si la página ya cargó
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', inicializarBuscadorFlotante);
-} else {
-    setTimeout(inicializarBuscadorFlotante, 1000);
-}
+console.log("🔧 Buscador flotante ajustado configurado");
 
-console.log("Script de buscador flotante cargado");
 </script>
 </body>
 </html>

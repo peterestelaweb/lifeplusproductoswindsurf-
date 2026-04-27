@@ -334,6 +334,64 @@ PRODUCT_DATABASE = {
             'description': 'Complete anti-aging skincare regimen',
             'benefits': ['Complete skincare', 'Anti-aging focus', 'Premium ingredients']
         }
+    ],
+    "Pets": [
+        {
+            'code': '6687',
+            'name': 'Lifeplus Pets™ Calm',
+            'format': '90 Masticables (135g)',
+            'price': 0.00,
+            'description': 'Masticables Blandos para Soporte de Comportamiento Avanzado. Promueve el equilibrio del comportamiento y el bienestar general.',
+            'benefits': ['Equilibrio de comportamiento', 'Bienestar general', 'Ingredientes naturales']
+        },
+        {
+            'code': '6688',
+            'name': 'Lifeplus Pets™ Move',
+            'format': 'Masticables Blandos',
+            'price': 0.00,
+            'description': 'Masticables Blandos para soporte avanzado de las articulaciones en cada etapa de la vida.',
+            'benefits': ['Salud articular', 'Soporte de movilidad', 'Para todas las edades']
+        },
+        {
+            'code': '6689',
+            'name': 'Lifeplus Pets™ Digest',
+            'format': 'Masticables Blandos',
+            'price': 0.00,
+            'description': 'Masticables Blandos para la Salud Digestiva. Promueve un intestino equilibrado y facilita la digestión.',
+            'benefits': ['Salud digestiva', 'Intestino equilibrado', 'Fácil digestión']
+        },
+        {
+            'code': '6692',
+            'name': 'Lifeplus Pets™ Peanut Butter Biscuits',
+            'format': 'Galletas',
+            'price': 0.00,
+            'description': 'Una deliciosa y saludable golosina para tu perro con sabor a crema de cacahuete.',
+            'benefits': ['Golosina nutritiva', 'Ingredientes naturales', 'Sabor delicioso']
+        },
+        {
+            'code': '6697',
+            'name': 'Lifeplus Pets™ Care & Comfort',
+            'format': 'Aerosol',
+            'price': 0.00,
+            'description': 'Defensa Segura y Calmante Contra las Pulgas y Garrapatas. Fórmula no tóxica con aceites naturales.',
+            'benefits': ['Protección contra pulgas', 'Defensa contra garrapatas', 'Fórmula no tóxica']
+        },
+        {
+            'code': '6698',
+            'name': 'Lifeplus Pets™ Ahiflower® Oil',
+            'format': 'Aerosol',
+            'price': 0.00,
+            'description': 'Apoyo avanzado para la piel y el pelaje con aceite de Ahiflower®. Rico en Omega-3 y Omega-6.',
+            'benefits': ['Piel hidratada', 'Pelaje brillante', 'Soporte antioxidante']
+        },
+        {
+            'code': 'PETS-APP',
+            'name': 'Lifeplus Pets™ Mobile App',
+            'format': 'Aplicación Móvil',
+            'price': 0.00,
+            'description': 'Aplicación móvil para realizar el seguimiento del bienestar y nutrición de tu mascota.',
+            'benefits': ['Seguimiento digital', 'Recordatorios', 'Gestión de salud']
+        }
     ]
 }
 
