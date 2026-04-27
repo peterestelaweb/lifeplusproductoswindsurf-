@@ -17,7 +17,7 @@ def crear_catalogo_buscador_funcional():
 /* Botón flotante de búsqueda - SIN SOLAPAMIENTO */
 .search-float-btn {
     position: fixed !important;
-    bottom: 90px !important;  /* 70px por encima del botón de WhatsApp */
+    bottom: 110px !important;  /* Separado del botón de WhatsApp */
     right: 20px !important;
     width: 65px !important;
     height: 65px !important;
