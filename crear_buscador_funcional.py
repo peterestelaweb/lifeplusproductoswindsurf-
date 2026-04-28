@@ -17,8 +17,9 @@ def crear_catalogo_buscador_funcional():
 /* Botón flotante de búsqueda - SIN SOLAPAMIENTO */
 .search-float-btn {
     position: fixed !important;
-    bottom: 110px !important;  /* Separado del botón de WhatsApp */
-    right: 20px !important;
+    bottom: 320px !important;  /* Mucho más alto para evitar el Dock */
+    right: 25px !important;    /* Ligeramente más separado del borde */
+    left: auto !important;
     width: 65px !important;
     height: 65px !important;
     border-radius: 50% !important;
@@ -75,6 +76,18 @@ def crear_catalogo_buscador_funcional():
 
 .search-float-btn:hover::after {
     opacity: 1 !important;
+}
+
+/* Re-posicionar botones originales para que no queden tapados por el Dock */
+.floating-whatsapp-btn {
+    bottom: 160px !important;
+    right: 25px !important;
+    z-index: 9997 !important;
+}
+.floating-contact-btn {
+    bottom: 240px !important;
+    right: 25px !important;
+    z-index: 9997 !important;
 }
 
 .search-float-btn i {
@@ -456,7 +469,7 @@ def crear_catalogo_buscador_funcional():
                     <i class="fas fa-search"></i>
                     Buscar Productos LifePlus
                 </h2>
-                <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+                <button class="modal__close" aria-label="Cerrar buscador" onclick="closeSearchModal()">
                     <i class="fas fa-times"></i>
                 </button>
             </header>
@@ -501,11 +514,8 @@ def crear_catalogo_buscador_funcional():
     </div>
 </div>
 
-<!-- Botón flotante de búsqueda funcional -->
-<button class="search-float-btn" id="searchFloatBtn"
-        data-micromodal-trigger="modal-search"
-        aria-label="Abrir buscador de productos"
-        title="Buscar productos LifePlus">
+<!-- Botón flotante de búsqueda -->
+<button id="searchFloatBtn" class="search-float-btn" onclick="openSearchModal()">
     <i class="fas fa-search"></i>
 </button>
 '''
@@ -521,10 +531,30 @@ def crear_catalogo_buscador_funcional():
 
     # JavaScript funcional completo con MicroModal y base de datos
     js_funcional = '''
-// ===== BUSCADADOR FUNCIONAL CON MICROMODAL ===== -->
-<script src="micromodal.min.js"></script>
-<script>
-console.log("🔥 INICIANDO BUSCADADOR FUNCIONAL CON MICROMODAL");
+// ===== BUSCADADOR FUNCIONAL - MODAL VANILLA JS =====
+// ===== MODAL OPEN/CLOSE (Vanilla JS puro, sin dependencias) =====
+function openSearchModal() {
+    const modal = document.getElementById('modal-search');
+    if (modal) { modal.classList.add('is-open'); }
+    setTimeout(() => {
+        const input = document.getElementById('searchInput');
+        if (input) input.focus();
+    }, 100);
+}
+function closeSearchModal() {
+    const modal = document.getElementById('modal-search');
+    if (modal) { modal.classList.remove('is-open'); }
+}
+// Cerrar al pulsar Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeSearchModal();
+});
+// Cerrar al clicar el overlay
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('modal__overlay')) closeSearchModal();
+});
+
+console.log('🔥 INICIANDO BUSCADADOR FUNCIONAL (VANILLA JS)');
 
 // Base de datos completa de productos LifePlus (111 productos)
 const productosLifePlus = {
@@ -869,8 +899,9 @@ const productosLifePlus = {
 let todosLosProductos = [];
 let resultadosActuales = [];
 
-// Inicializar array plano de productos
+// Inicializar array plano de productos (con guard para evitar duplicados)
 function inicializarProductos() {
+    if (todosLosProductos.length > 0) return; // Ya inicializado
     for (const categoria in productosLifePlus) {
         productosLifePlus[categoria].forEach(producto => {
             todosLosProductos.push({...producto, categoria: categoria});
@@ -1024,21 +1055,15 @@ function inicializarBuscador() {
     inicializarProductos();
     configurarEventosBusqueda();
 
-    // Inicializar MicroModal
-    MicroModal.init({
-        disableScroll: true,
-        awaitCloseAnimation: true,
-        debugMode: false
-    });
-
-    // Forzar visibilidad del botón
+    // Forzar visibilidad del botón flotante
     setTimeout(() => {
         const btnBusqueda = document.getElementById('searchFloatBtn');
         if (btnBusqueda) {
             btnBusqueda.style.cssText = `
                 position: fixed !important;
-                bottom: 90px !important;
-                right: 20px !important;
+                bottom: 320px !important;
+                right: 25px !important;
+                left: auto !important;
                 width: 65px !important;
                 height: 65px !important;
                 border-radius: 50% !important;
@@ -1074,30 +1099,39 @@ function inicializarBuscador() {
     }, 500);
 }
 
-// Inicialización en múltiples momentos para asegurar funcionamiento
-setTimeout(inicializarBuscador, 1000);
-
+// Inicializar UNA sola vez cuando el DOM esté listo
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(inicializarBuscador, 1000);
-    });
+    document.addEventListener('DOMContentLoaded', inicializarBuscador);
+} else {
+    inicializarBuscador();
 }
 
-window.addEventListener('load', () => {
-    setTimeout(inicializarBuscador, 1500);
-});
-
-console.log("🎯 Buscador funcional LifePlus configurado correctamente");
-</script>'''
+console.log("🎯 Buscador funcional LifePlus configurado correctamente");'''
 
     # Insertar JavaScript antes del cierre </body>
     body_end = contenido.find('</body>')
     if body_end != -1:
-        contenido = contenido[:body_end] + f'<script>\\n{js_funcional}\\n</script>\\n' + contenido[body_end:]
+        contenido = contenido[:body_end] + f'\n<script>\n{js_funcional}\n</script>\n' + contenido[body_end:]
         print("✅ JavaScript funcional insertado")
     else:
         print("❌ Error: No se encontró el cierre </body>")
         return False
+
+    # Insertar Buscador en la sección de Bienvenida (Hero Search)
+    hero_search_html = '''
+                <div class="hero-search-container" style="max-width: 600px; margin: 30px auto; padding: 0 15px;">
+                    <div class="hero-search-box" style="position: relative; cursor: pointer;" onclick="openSearchModal()">
+                        <input type="text" placeholder="¿Qué producto buscas hoy?..." readonly 
+                            style="width: 100%; padding: 18px 25px 18px 55px; border-radius: 40px; border: 2px solid #2ECC71; font-size: 1.1rem; box-shadow: 0 10px 25px rgba(46, 204, 113, 0.2); cursor: pointer; outline: none; background: white;">
+                        <i class="fas fa-search" style="position: absolute; left: 22px; top: 50%; transform: translateY(-50%); color: #2ECC71; font-size: 1.3rem;"></i>
+                        <div style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: #2ECC71; color: white; padding: 10px 20px; border-radius: 30px; font-weight: 600;">BUSCAR</div>
+                    </div>
+                </div>
+    '''
+    contenido = contenido.replace(
+        '<p>Encuentra todos nuestros productos de bienestar en un solo lugar</p>',
+        '<p>Encuentra todos nuestros productos de bienestar en un solo lugar</p>' + hero_search_html
+    )
 
     # Actualizar título
     contenido = contenido.replace(
