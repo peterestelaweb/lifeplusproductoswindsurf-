@@ -54,3 +54,53 @@ Se ha añadido una nueva funcionalidad avanzada (`extract_nuevos.py` y `inject_n
 2. **Inyección**: El sistema lee este JSON e inyecta dinámicamente los 180+ productos en `products_data.py` bajo una nueva categoría llamada `"nuevos"`.
 3. **Despliegue UI**: También inyecta el menú "✨ Novedades (Auto)" en el archivo generador `crear_buscador_funcional.py`.
 4. **Seguridad (Ramas Git)**: Todo esto debe hacerse siempre creando primero una rama nueva (`git checkout -b actualizacion-productos`) para evitar romper la web principal (Main/Master) con una entrada masiva de productos sin revisar.
+
+---
+
+## 8. Proceso de Actualización de Packs (Mayo 2026)
+
+### Contexto
+La tienda LifePlus publica "packs" (combos de productos nutricionales). Estos packs cambian con frecuencia y tienen precios específicos (normal + ASAP). El proceso para mantenerlos al día es:
+
+### URLs de referencia
+- **Búsqueda de packs:** `https://ww1.lifeplus.com/SHVCB5/M/es/es/web-page/products?search=pack`
+- **Tienda completa:** `https://ww1.lifeplus.com/SHVCB5/M/es/es/web-page/products?tags=view_all`
+
+### Archivos que actualizar (capas duales)
+El sistema tiene DOS capas independientes que deben actualizarse por separado:
+
+1. **`crear_buscador_funcional.py`** → Sección `packs` del diccionario de datos JS
+   - Datos: code, name, price, price_asap, format
+   - Estos datos alimentan el buscador modal
+
+2. **`catalogo_lifeplus_final.html`** → Tarjetas HTML dentro de `<div id="packs" class="category-section">`
+   - Tarjetas visibles en la web
+   - Patrón de imagen: `https://ww1.lifeplus.com/images/products/prodpic_[CODE]_1@2x.jpg`
+   - Patrón de enlace: `https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/[CODE]/[SLUG]`
+
+### Flujo completo
+```bash
+# 1. Scrapear precios actuales de la tienda (usar Playwright)
+# 2. Actualizar crear_buscador_funcional.py (sección packs)
+# 3. Añadir tarjetas HTML en catalogo_lifeplus_final.html
+# 4. Regenerar el HTML final
+python3 crear_buscador_funcional.py
+# 5. Copiar a index.html (único archivo de producción)
+cp catalogo_lifeplus_buscador_funcional.html index.html
+# 6. Subir a GitHub
+git add index.html catalogo_lifeplus_final.html crear_buscador_funcional.py catalogo_lifeplus_buscador_funcional.html
+git commit -m "feat: actualizar packs"
+git push origin main
+```
+
+### Despliegue en servidor
+**Solo se sube `index.html`** al servidor. Todo está embebido (HTML + CSS + JS + datos).
+
+### Datos actuales (30 packs)
+Ver tabla completa en `OpenSpec_Catalog_Scraping_Process.md` → "Implementación Packs Nutricionales (Mayo 2026)".
+
+### Precauciones
+- **ID duplicado**: Existen DOS `<div id="packs">` en el HTML. Las tarjetas deben insertarse en la PRIMERA sección (la que tiene el `<h2>` "Packs").
+- **Contador**: Actualizar el texto "X productos disponibles" en el `<p>` del header de la sección.
+- **SVG fallback**: Cada tarjeta incluye un `onerror` con SVG por si la imagen de LifePlus no carga.
+- **Excluir promocionales**: Los productos 2722 (Member estándar), 2465 (Mochila) y 2726 (Member premium) NO son packs nutricionales.
