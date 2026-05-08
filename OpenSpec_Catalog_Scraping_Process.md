@@ -1,5 +1,7 @@
 # OpenSpec: Flujo de Trabajo para Incorporar Nuevos Productos LifePlus
 
+> Documento complementario. Ver **`OpenSpec_MASTER.md`** para la referencia completa del proyecto.
+
 ## 1. Visión General
 Este documento (OpenSpec) define el procedimiento técnico y metodológico (el "escarapín" o scraping) que utilizamos para integrar nuevos productos de LifePlus —como la línea **Pets**— al catálogo web inteligente y funcional. Mantener este documento actualizado asegura que cualquier producto nuevo se pueda incorporar en cuestión de minutos siguiendo los mismos estándares de calidad y diseño de la página.
 

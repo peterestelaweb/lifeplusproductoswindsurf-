@@ -1,4 +1,6 @@
-# OpenSpec: Robot de Detección de Novedades LifePlus
+# OpenSpec: Robot de Detección de Noveldades LifePlus
+
+> Documento complementario. Ver **`OpenSpec_MASTER.md`** para la referencia completa del proyecto.
 
 ## 1. Visión General
 Este documento define el procedimiento para utilizar el **Robot LifePlus**, un script automatizado desarrollado en Python que visita la web oficial de LifePlus, lee todo el catálogo dinámico de productos, y lo compara con nuestra base de datos local (`products_data.py`). El objetivo es detectar rápidamente si la marca ha lanzado nuevos productos o ha retirado alguno, sin necesidad de revisar la web manualmente.
