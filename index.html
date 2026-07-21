@@ -744,6 +744,46 @@
     align-items: center !important;
     gap: 12px !important;
     font-size: 1rem !important;
+    margin-bottom: 14px !important;
+}
+
+.result-product-shop-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 11px 16px !important;
+    border-radius: 9px !important;
+    background: linear-gradient(135deg, #FF6B35, #F7931E) !important;
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    box-sizing: border-box !important;
+}
+
+.result-product-shop-link:hover,
+.result-product-shop-link:focus-visible {
+    filter: brightness(0.95) !important;
+    outline: 3px solid rgba(247, 147, 30, 0.25) !important;
+}
+
+.result-product-action {
+    display: block !important;
+    margin: 2px 0 12px !important;
+    color: #2E7D32 !important;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+}
+
+.product-card.search-highlight {
+    border-color: #FF6B35 !important;
+    box-shadow: 0 0 0 5px rgba(255, 107, 53, 0.2), 0 12px 32px rgba(0, 0, 0, 0.15) !important;
+    animation: searchProductPulse 1.2s ease-in-out 2 !important;
+}
+
+@keyframes searchProductPulse {
+    50% { transform: translateY(-5px) scale(1.015); }
 }
 
 .price-normal {
@@ -2959,7 +2999,7 @@
                         </div>
                         <h3 class="product-name">Forever Young Clinical Peptide Crème with OPC</h3>
                         <p class="product-format">50 ml</p>
-                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4173/forever-young-clinical-peptide-crème-with-opc" target="_blank" class="product-link">
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4173/forever-young-clinical-peptide-creme-with-opc" target="_blank" rel="noopener noreferrer" class="product-link">
                             <i class="fas fa-shopping-cart"></i>
                             <span>Comprar en Tienda</span>
                         </a>
@@ -2980,7 +3020,7 @@
                         </div>
                         <h3 class="product-name">Forever Young Active Renewal Oil with Bakuchiol</h3>
                         <p class="product-format">30 ml</p>
-                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4174/forever-young-active-renewal-oil-with-bakuchiol" target="_blank" class="product-link">
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4174/forever-young-active-renewal-oil-with-bakuchiol" target="_blank" rel="noopener noreferrer" class="product-link">
                             <i class="fas fa-shopping-cart"></i>
                             <span>Comprar en Tienda</span>
                         </a>
@@ -5808,7 +5848,7 @@
                         </div>
                         <h3 class="product-name">Forever Young Clinical Peptide Crème with OPC</h3>
                         <p class="product-format">50 ml</p>
-                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4173/forever-young-clinical-peptide-crème-with-opc" target="_blank" class="product-link">
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4173/forever-young-clinical-peptide-creme-with-opc" target="_blank" rel="noopener noreferrer" class="product-link">
                             <i class="fas fa-shopping-cart"></i>
                             <span>Comprar en Tienda</span>
                         </a>
@@ -5826,7 +5866,7 @@
                         </div>
                         <h3 class="product-name">Forever Young Active Renewal Oil with Bakuchiol</h3>
                         <p class="product-format">30 ml</p>
-                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4174/forever-young-active-renewal-oil-with-bakuchiol" target="_blank" class="product-link">
+                        <a href="https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4174/forever-young-active-renewal-oil-with-bakuchiol" target="_blank" rel="noopener noreferrer" class="product-link">
                             <i class="fas fa-shopping-cart"></i>
                             <span>Comprar en Tienda</span>
                         </a>
@@ -7310,8 +7350,8 @@ const productosLifePlus = {
         {"code": "4132", "name": "Forever Young Rich Moisturizing Crème", "price": "€64.50", "price_asap": "€60.95", "format": "50 ml"},
         {"code": "4133", "name": "Forever Young Strengthen and Restore Shampoo", "price": "€18.75", "price_asap": "€17.72", "format": "250 ml"},
         {"code": "4134", "name": "Forever Young Repair and Protect Conditioner", "price": "€35.75", "price_asap": "€33.78", "format": "250 ml"},
-        {"code": "4173", "name": "Forever Young Clinical Peptide Crème with OPC", "price": "€99.25", "price_asap": "€94.25", "format": "50 ml"},
-        {"code": "4174", "name": "Forever Young Active Renewal Oil with Bakuchiol", "price": "€79.75", "price_asap": "€75.75", "format": "30 ml"}
+        {"code": "4173", "name": "Forever Young Clinical Peptide Crème with OPC", "price": "€99.25", "price_asap": "€94.25", "format": "50 ml", "url": "https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4173/forever-young-clinical-peptide-creme-with-opc"},
+        {"code": "4174", "name": "Forever Young Active Renewal Oil with Bakuchiol", "price": "€79.75", "price_asap": "€75.75", "format": "30 ml", "url": "https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/4174/forever-young-active-renewal-oil-with-bakuchiol"}
     ],
 
     personal: [
@@ -7547,20 +7587,66 @@ const productosLifePlus = {
 let todosLosProductos = [];
 let resultadosActuales = [];
 
-// Inicializar array plano de productos (con guard para evitar duplicados)
+const fichasPdfForeverYoung = {
+    '4144': 'Forever Young Day Crème SPF 25.pdf',
+    '4129': 'Forever Young Gentle Cream Cleanser.pdf',
+    '4130': 'Forever Young Rejuvenating Eye Crème.pdf',
+    '4131': 'Forever Young Radiance Serum.pdf',
+    '4132': 'Forever Young Rich Moisturizing Crème.pdf',
+    '4133': 'Forever Young Strengthen & Restore Shampoo.pdf',
+    '4134': 'Forever Young Repair & Protect Conditioner.pdf',
+    '4173': 'Forever Young Clinical Peptide Crème with OPC.pdf',
+    '4174': 'Forever Young Active Renewal Oil with Bakuchiol.pdf'
+};
+
+// Inicializar el índice, enlazar cada código a la tienda y eliminar duplicados.
 function inicializarProductos() {
     if (todosLosProductos.length > 0) return; // Ya inicializado
+
+    const fichasPorCodigo = new Map();
+    document.querySelectorAll('.product-card').forEach(tarjeta => {
+        const codigo = tarjeta.querySelector('.product-code')?.textContent.trim();
+        const enlace = tarjeta.querySelector('.product-link')?.href;
+        const categoria = tarjeta.closest('.category-section')?.id;
+        if (codigo && enlace && !fichasPorCodigo.has(codigo)) {
+            fichasPorCodigo.set(codigo, { enlace, categoria });
+        }
+    });
+
+    const productosPorCodigo = new Map();
     for (const categoria in productosLifePlus) {
         productosLifePlus[categoria].forEach(producto => {
-            todosLosProductos.push({...producto, categoria: categoria});
+            const ficha = fichasPorCodigo.get(producto.code);
+            const nombrePdf = fichasPdfForeverYoung[producto.code];
+            const productoIndexado = {
+                ...producto,
+                categoria: categoria === 'nuevos' && ficha?.categoria ? ficha.categoria : categoria,
+                tieneFicha: Boolean(ficha),
+                pdfUrl: nombrePdf ? `https://lifepluspdf.peterestela.com/pdfs/${encodeURIComponent(nombrePdf)}` : null,
+                url: producto.url || ficha?.enlace ||
+                    `https://ww1.lifeplus.com/SHVCB5/S/es/es/product-details/${producto.code}`
+            };
+            const existente = productosPorCodigo.get(producto.code);
+            const tienePrecioReal = producto.price !== '€0.00';
+            const existenteTienePrecioReal = existente && existente.price !== '€0.00';
+
+            if (!existente || (!existenteTienePrecioReal && tienePrecioReal)) {
+                productosPorCodigo.set(producto.code, productoIndexado);
+            }
         });
     }
-    console.log(`✅ ${todosLosProductos.length} productos cargados en el sistema de búsqueda`);
+    todosLosProductos = Array.from(productosPorCodigo.values());
+    console.log(`✅ ${todosLosProductos.length} productos únicos cargados en el sistema de búsqueda`);
 }
 
 // Función de búsqueda principal
 function buscarProductos(query, categoriaFiltro = 'todas') {
-    query = query.toLowerCase().trim();
+    const normalizarTexto = texto => texto
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+
+    query = normalizarTexto(query).trim();
 
     if (!query && categoriaFiltro === 'todas') {
         return [];
@@ -7568,7 +7654,7 @@ function buscarProductos(query, categoriaFiltro = 'todas') {
 
     let productosFiltrados = categoriaFiltro === 'todas'
         ? todosLosProductos
-        : (productosLifePlus[categoriaFiltro] || []);
+        : todosLosProductos.filter(producto => producto.categoria === categoriaFiltro);
 
     if (!query) {
         return productosFiltrados;
@@ -7576,10 +7662,10 @@ function buscarProductos(query, categoriaFiltro = 'todas') {
 
     return productosFiltrados.filter(producto => {
         // Búsqueda por nombre, código y formato
-        return producto.name.toLowerCase().includes(query) ||
+        return normalizarTexto(producto.name).includes(query) ||
                producto.code.includes(query) ||
-               producto.format.toLowerCase().includes(query) ||
-               producto.categoria.toLowerCase().includes(query);
+               normalizarTexto(producto.format).includes(query) ||
+               normalizarTexto(producto.categoria).includes(query);
     });
 }
 
@@ -7601,7 +7687,7 @@ function renderizarResultados(resultados) {
     }
 
     const htmlResultados = resultados.map(producto => `
-        <div class="search-result-product" data-code="${producto.code}">
+        <div class="search-result-product" data-code="${producto.code}"${producto.url ? ` data-url="${producto.url}" role="link" tabindex="0"` : ''}>
             <div class="result-product-name">${producto.name}</div>
             <div class="result-product-code">Código: ${producto.code}</div>
             <div class="result-product-category">${getCategoryIcon(producto.categoria)} ${formatCategoryName(producto.categoria)}</div>
@@ -7609,6 +7695,11 @@ function renderizarResultados(resultados) {
                 <span class="price-normal">${producto.price}</span>
                 <span class="price-asap">${producto.price_asap} <small>(ASAP)</small></span>
             </div>
+            ${producto.pdfUrl ? '<span class="result-product-action"><i class="fas fa-file-pdf" aria-hidden="true"></i> Abrir ficha PDF en otra pestaña</span>' : (producto.tieneFicha ? '<span class="result-product-action"><i class="fas fa-eye" aria-hidden="true"></i> Ver ficha del producto</span>' : '')}
+            <a class="result-product-shop-link" href="${producto.url}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                Comprar en mi tienda
+            </a>
         </div>
     `).join('');
 
@@ -7620,10 +7711,44 @@ function renderizarResultados(resultados) {
         elemento.addEventListener('click', () => {
             const codigo = elemento.dataset.code;
             console.log(`🛍️ Producto seleccionado: ${codigo}`);
-            // Aquí puedes añadir funcionalidad para redirigir o mostrar detalles
-            MicroModal.close('modal-search');
+            abrirFichaProducto(codigo);
+        });
+
+        elemento.addEventListener('keydown', evento => {
+            if ((evento.key === 'Enter' || evento.key === ' ') && elemento.dataset.url) {
+                evento.preventDefault();
+                elemento.click();
+            }
         });
     });
+}
+
+// Cerrar el buscador y llevar al usuario a la ficha interna del catálogo.
+function abrirFichaProducto(codigo) {
+    const producto = todosLosProductos.find(item => item.code === codigo);
+    if (producto?.pdfUrl) {
+        window.open(producto.pdfUrl, '_blank', 'noopener,noreferrer');
+        return;
+    }
+    if (!producto?.tieneFicha) return;
+
+    closeSearchModal();
+    showCategory(producto.categoria);
+
+    setTimeout(() => {
+        const tarjetas = Array.from(document.querySelectorAll('.category-section.active .product-card'));
+        const ficha = tarjetas.find(tarjeta =>
+            tarjeta.querySelector('.product-code')?.textContent.trim() === codigo
+        );
+        if (!ficha) return;
+
+        document.querySelectorAll('.product-card.search-highlight').forEach(tarjeta =>
+            tarjeta.classList.remove('search-highlight')
+        );
+        ficha.classList.add('search-highlight');
+        ficha.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => ficha.classList.remove('search-highlight'), 5000);
+    }, 350);
 }
 
 // Obtener icono de categoría

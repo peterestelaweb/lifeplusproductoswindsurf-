@@ -1,0 +1,62 @@
+name: Deploy lifeplusp by FTP
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: lifeplusp-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Upload and verify lifeplusp.peterestela.com
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare public files
+        run: |
+          mkdir -p .deploy
+          cp index.html .deploy/index.html
+          printf 'commit=%s\nrun=%s\nbuilt_at=%s\n' \
+            '${{ github.sha }}' \
+            '${{ github.run_id }}' \
+            "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > .deploy/deploy-marker.txt
+
+      - name: Deploy to captive FTP root
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          protocol: ftps
+          local-dir: ./.deploy/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+
+      - name: Verify public deployment
+        run: |
+          for attempt in 1 2 3 4 5 6; do
+            marker="$(curl --fail --silent --show-error --location \
+              "https://lifeplusp.peterestela.com/deploy-marker.txt?run=${{ github.run_id }}" || true)"
+            html="$(curl --fail --silent --show-error --location --compressed \
+              "https://lifeplusp.peterestela.com/?run=${{ github.run_id }}" || true)"
+
+            if printf '%s' "$marker" | grep -F '${{ github.sha }}' \
+              && printf '%s' "$html" | grep -F '4173' \
+              && printf '%s' "$html" | grep -F '4174' \
+              && printf '%s' "$html" | grep -F 'Abrir ficha PDF en otra pestaña'; then
+              printf '%s\n' "$marker"
+              exit 0
+            fi
+
+            sleep 10
+          done
+
+          echo 'Production did not expose the expected commit and product markers.' >&2
+          exit 1
