@@ -43,10 +43,15 @@
     const normalize=value=>String(value||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
     function card(p){
       const direct=p.purchase==='direct';
+      const cart=p.purchase==='cart';
       const action=direct
         ? `<a class="action" href="${p.url}" target="_blank" rel="noopener">Comprar producto · Produkt kaufen ↗</a>`
-        : `<a class="action phone" href="${data.phone_href}">Llamar para pedir · Zum Bestellen anrufen</a>`;
-      const note=direct?'':`<p class="call-note">Comunica el Art. ${p.article} y la Shop-ID ${data.shop_id} al operador.</p>`;
+        : cart
+          ? `<a class="action" href="${p.url}" target="_blank" rel="noopener">Comprar desde la cesta · Über den Warenkorb kaufen ↗</a>`
+          : `<a class="action phone" href="${data.phone_href}">Llamar para pedir · Zum Bestellen anrufen</a>`;
+      const note=direct?'':cart
+        ? `<p class="call-note">En la cesta, busca el Art. ${p.article} y pulsa “In den Warenkorb”.</p>`
+        : `<p class="call-note">Comunica el Art. ${p.article} y la Shop-ID ${data.shop_id} al operador.</p>`;
       return `<article class="card"><div class="image-wrap"><img src="${p.image}" alt="${escapeHTML(p.name)}" loading="lazy" onerror="this.onerror=null;this.src='${p.image_fallback}'"></div><div class="meta"><b>Lifeplus</b><span>Art. ${p.article}</span></div><h3>${escapeHTML(p.name)}</h3><div class="prices"><span class="price">CHF ${p.price_chf}</span><span class="ip">IP ${p.ip}</span></div>${action}${note}</article>`;
     }
     function render(){

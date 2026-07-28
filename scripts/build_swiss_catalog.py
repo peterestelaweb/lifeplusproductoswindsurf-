@@ -24,6 +24,7 @@ CONFIRMED_CODES = """
 # The approved plan explicitly classifies these as telephone orders, even if a
 # product can occur in the visible product payload during a catalogue refresh.
 PHONE_OVERRIDES = {"5828", "5830"}
+CART_URL = "https://www.lifeplus.com/SHX4C7/ch/de/view-cart"
 
 PENDING_WITHOUT_CODE = [
     "ParaCleanse",
@@ -85,14 +86,18 @@ def main() -> None:
     direct = {str(row.get("item_id")): row for row in direct_rows if row.get("item_id")}
     phone = {str(row.get("ShortProductID")): row for row in phone_rows if row.get("ShortProductID")}
 
+    # Every available secondary-feed item is searchable from the Swiss cart,
+    # even though it is absent from the public product grid.
+    codes = list(dict.fromkeys(CONFIRMED_CODES + sorted(phone)))
     products = []
     missing = []
-    for code in CONFIRMED_CODES:
+    for code in codes:
         row = direct.get(code) or phone.get(code)
         if not row:
             missing.append(code)
             continue
         is_direct = code in direct and code not in PHONE_OVERRIDES
+        is_cart = code in phone and code not in PHONE_OVERRIDES
         name = clean_name(row)
         image_code = REMOTE_IMAGE_ALIASES.get(code, code)
         image = (f"assets/products/prodpic_{code}_1.jpg" if code in LOCAL_IMAGE_ALIASES
@@ -103,8 +108,8 @@ def main() -> None:
             "category": category(name),
             "price_chf": money(row.get("price") or row.get("Price")),
             "ip": money(row.get("ip") or row.get("IP")),
-            "purchase": "direct" if is_direct else "phone",
-            "url": f"https://www.lifeplus.com/SHX4C7/ch/de/product-details/{code}" if is_direct else None,
+            "purchase": "direct" if is_direct else ("cart" if is_cart else "phone"),
+            "url": f"https://www.lifeplus.com/SHX4C7/ch/de/product-details/{code}" if is_direct else (CART_URL if is_cart else None),
             "image": image,
             "image_fallback": "https://www.lifeplus.com/images/product_placeholder.png",
         })
