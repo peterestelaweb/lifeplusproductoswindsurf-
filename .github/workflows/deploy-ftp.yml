@@ -56,7 +56,7 @@ jobs:
               && printf '%s' "$html" | grep -F '0800 321 026' \
               && curl --fail --silent --show-error --location --compressed \
                 "https://lifeplusp.peterestela.com/data/catalogo-suiza.js?run=${{ github.run_id }}" \
-                | grep -F 'Support Tabs Plus DE'; then
+                | grep -F 'Lifeplus Pets® Digest'; then
               printf '%s\n' "$marker"
               exit 0
             fi

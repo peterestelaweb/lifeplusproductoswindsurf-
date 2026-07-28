@@ -18,6 +18,7 @@ CONFIRMED_CODES = """
 1021 2747 2748 5038 5534 5708 5789 5822 5281 5282 5283 5284 5285 5286
 5287 5288 5289 5290 4669 4851 5036 4634 4133 4132 4131 4134 5823 4130
 4129 4144 4173 4174 5707 5345 5829 5830 5828
+5894 5895 5390 5887 5888 5889
 """.split()
 
 # The approved plan explicitly classifies these as telephone orders, even if a
@@ -53,6 +54,8 @@ def extract_array(source: str, variable: str) -> list[dict]:
 
 def category(name: str) -> str:
     value = name.lower()
+    if "lifeplus pets" in value:
+        return "Lifeplus Pets"
     if "forever young" in value:
         return "Forever Young"
     if value.startswith("be "):

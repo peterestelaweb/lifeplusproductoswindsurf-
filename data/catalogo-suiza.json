@@ -291,6 +291,72 @@
       "image_fallback": "https://www.lifeplus.com/images/product_placeholder.png"
     },
     {
+      "article": "5895",
+      "name": "Lifeplus Pets® Ahiflower® Oil",
+      "category": "Lifeplus Pets",
+      "price_chf": "28.25",
+      "ip": "16.25",
+      "purchase": "direct",
+      "url": "https://www.lifeplus.com/SHX4C7/ch/de/product-details/5895",
+      "image": "https://www.lifeplus.com/images/products/prodpic_5895_1.jpg",
+      "image_fallback": "https://www.lifeplus.com/images/product_placeholder.png"
+    },
+    {
+      "article": "5887",
+      "name": "Lifeplus Pets® Calm",
+      "category": "Lifeplus Pets",
+      "price_chf": "32.50",
+      "ip": "18.00",
+      "purchase": "direct",
+      "url": "https://www.lifeplus.com/SHX4C7/ch/de/product-details/5887",
+      "image": "https://www.lifeplus.com/images/products/prodpic_5887_1.jpg",
+      "image_fallback": "https://www.lifeplus.com/images/product_placeholder.png"
+    },
+    {
+      "article": "5894",
+      "name": "Lifeplus Pets® Care & Comfort",
+      "category": "Lifeplus Pets",
+      "price_chf": "21.50",
+      "ip": "11.75",
+      "purchase": "direct",
+      "url": "https://www.lifeplus.com/SHX4C7/ch/de/product-details/5894",
+      "image": "https://www.lifeplus.com/images/products/prodpic_5894_1.jpg",
+      "image_fallback": "https://www.lifeplus.com/images/product_placeholder.png"
+    },
+    {
+      "article": "5889",
+      "name": "Lifeplus Pets® Digest",
+      "category": "Lifeplus Pets",
+      "price_chf": "34.75",
+      "ip": "19.25",
+      "purchase": "direct",
+      "url": "https://www.lifeplus.com/SHX4C7/ch/de/product-details/5889",
+      "image": "https://www.lifeplus.com/images/products/prodpic_5889_1.jpg",
+      "image_fallback": "https://www.lifeplus.com/images/product_placeholder.png"
+    },
+    {
+      "article": "5888",
+      "name": "Lifeplus Pets® Move",
+      "category": "Lifeplus Pets",
+      "price_chf": "30.75",
+      "ip": "16.75",
+      "purchase": "direct",
+      "url": "https://www.lifeplus.com/SHX4C7/ch/de/product-details/5888",
+      "image": "https://www.lifeplus.com/images/products/prodpic_5888_1.jpg",
+      "image_fallback": "https://www.lifeplus.com/images/product_placeholder.png"
+    },
+    {
+      "article": "5390",
+      "name": "Lifeplus Pets® Peanut Butter Biscuits",
+      "category": "Lifeplus Pets",
+      "price_chf": "13.00",
+      "ip": "5.00",
+      "purchase": "direct",
+      "url": "https://www.lifeplus.com/SHX4C7/ch/de/product-details/5390",
+      "image": "https://www.lifeplus.com/images/products/prodpic_5390_1.jpg",
+      "image_fallback": "https://www.lifeplus.com/images/product_placeholder.png"
+    },
+    {
       "article": "5044",
       "name": "Aloe Vera Caps",
       "category": "Nutrición y bienestar",
