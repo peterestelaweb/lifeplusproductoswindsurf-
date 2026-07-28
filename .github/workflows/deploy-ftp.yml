@@ -48,9 +48,13 @@ jobs:
           for attempt in 1 2 3 4 5 6; do
             marker="$(curl --fail --silent --show-error --location \
               --user-agent 'Mozilla/5.0 LifeplusDeployVerifier/1.0' \
+              --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' \
+              --header 'Accept-Language: es-ES,es;q=0.9,de;q=0.8' \
               "https://lifeplusp.peterestela.com/deploy-marker.txt?run=${{ github.run_id }}" || true)"
             html="$(curl --fail --silent --show-error --location --compressed \
               --user-agent 'Mozilla/5.0 LifeplusDeployVerifier/1.0' \
+              --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' \
+              --header 'Accept-Language: es-ES,es;q=0.9,de;q=0.8' \
               "https://lifeplusp.peterestela.com/?run=${{ github.run_id }}" || true)"
 
             if printf '%s' "$marker" | grep -F '${{ github.sha }}' \
@@ -58,6 +62,8 @@ jobs:
               && printf '%s' "$html" | grep -F '0800 321 026' \
               && curl --fail --silent --show-error --location --compressed \
                 --user-agent 'Mozilla/5.0 LifeplusDeployVerifier/1.0' \
+                --header 'Accept: text/javascript,*/*;q=0.8' \
+                --header 'Accept-Language: es-ES,es;q=0.9,de;q=0.8' \
                 "https://lifeplusp.peterestela.com/data/catalogo-suiza.js?run=${{ github.run_id }}" \
                 | grep -F 'Lifeplus Pets® Digest'; then
               printf '%s\n' "$marker"
