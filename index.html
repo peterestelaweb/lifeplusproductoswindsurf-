@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifePlus Catálogo con Buscador FUNCIONAL - ¡Realmente Funciona!</title>
+    <title>Catálogo LifePlus España | Productos por categoría</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -22,8 +22,8 @@
             --sun-gold: #f4a261;
             --lifeplus-gradient: linear-gradient(135deg, #2E7D32 0%, #4CAF50 50%, #66BB6A 100%);
             --gradient-hero: linear-gradient(135deg, #2E7D32 0%, #1B5E20 50%, #0d2f0f 100%);
-            --shadow-soft: 0 4px 20px rgba(46, 125, 50, 0.10);
-            --shadow-medium: 0 8px 30px rgba(46, 125, 50, 0.15);
+            --shadow-soft: 0 4px 20px rgba(26, 26, 26, 0.08);
+            --shadow-medium: 0 10px 32px rgba(26, 26, 26, 0.12);
             --radius-liquid: 30px;
             --radius-smooth: 20px;
             --space-sm: 1rem;
@@ -162,10 +162,6 @@
             font-weight: 700;
             color: var(--primary-green);
             margin-bottom: var(--space-sm);
-            background: var(--lifeplus-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .products-grid {
@@ -639,7 +635,7 @@
     padding: 15px 20px !important;
     background: #f8f9fa !important;
     border-radius: 12px !important;
-    border-left: 4px solid #FF6B35 !important;
+    border: 1px solid rgba(255, 107, 53, 0.18) !important;
 }
 
 .results-count {
@@ -875,10 +871,126 @@
 }
 
 </style>
+<style>
+/* Impeccable polish: jerarquía, accesibilidad y respuesta táctil */
+:root {
+    --focus-ring: 0 0 0 4px rgba(244, 162, 97, 0.35);
+    --card-radius: 16px;
+    --control-radius: 12px;
+}
+
+body {
+    padding-top: 24px;
+}
+
+.nav-container {
+    top: 12px;
+    border-radius: var(--card-radius);
+    backdrop-filter: none;
+}
+
+.nav-buttons {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    padding: 2px;
+}
+
+.nav-btn {
+    flex: 0 0 auto;
+    min-height: 44px;
+    border-width: 1px;
+    border-radius: var(--control-radius);
+}
+
+.category-header,
+.product-card,
+.category-preview-card {
+    border-radius: var(--card-radius);
+}
+
+.category-header {
+    text-align: left;
+    border: 1px solid rgba(46, 125, 50, 0.10);
+    box-shadow: 0 8px 24px rgba(27, 94, 32, 0.08);
+}
+
+.category-title {
+    max-width: 22ch;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    box-shadow: 0 8px 24px rgba(27, 94, 32, 0.10);
+}
+
+.product-link {
+    min-height: 46px;
+    margin-top: auto;
+    border-radius: var(--control-radius);
+}
+
+.category-preview-card {
+    border: 1px solid rgba(46, 125, 50, 0.12);
+    box-shadow: 0 6px 18px rgba(27, 94, 32, 0.08);
+}
+
+.nav-btn:focus-visible,
+.product-link:focus-visible,
+.category-preview-card:focus-visible,
+.back-to-top:focus-visible,
+.search-float-btn:focus-visible,
+.modal__close:focus-visible,
+.clear-search-btn:focus-visible,
+.search-input:focus-visible,
+.category-filter:focus-visible,
+.search-result-product:focus-visible {
+    outline: 3px solid #f4a261 !important;
+    outline-offset: 3px !important;
+    box-shadow: var(--focus-ring) !important;
+}
+
+@media (max-width: 768px) {
+    body { padding-top: 12px; }
+    .container { padding: 12px; }
+    .nav-container { top: 6px; margin-bottom: 24px; }
+    .category-header { padding: 24px 20px; }
+    .category-preview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .category-preview-card { padding: 18px 12px; }
+    .category-icon-wrapper { width: 56px; height: 56px; margin-bottom: 12px; }
+    .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .product-card { padding: 16px; }
+    .product-image-container { height: 150px; }
+    .search-float-btn::after { display: none !important; }
+}
+
+@media (max-width: 560px) {
+    .products-grid { grid-template-columns: 1fr; }
+    .category-preview-grid { grid-template-columns: 1fr 1fr; }
+    .modal__content { padding: 16px !important; }
+    .search-results-info { align-items: flex-start !important; gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
 </head>
 <body>
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Volver al principio">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 
     <div class="container">
@@ -6293,11 +6405,13 @@
             // Actualizar botones de navegación
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
             });
 
             const activeBtn = document.querySelector(`[data-category="${categoryId}"]`);
             if (activeBtn) {
                 activeBtn.classList.add('active');
+                activeBtn.setAttribute('aria-pressed', 'true');
             }
 
             // Scroll al inicio del contenido
@@ -6327,9 +6441,23 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Navegación principal
             document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.setAttribute('type', 'button');
+                btn.setAttribute('aria-pressed', 'false');
                 btn.addEventListener('click', function() {
                     const category = this.getAttribute('data-category');
                     showCategory(category);
+                });
+            });
+
+            // Las tarjetas de categorías también funcionan con teclado.
+            document.querySelectorAll('.category-preview-card').forEach(card => {
+                card.setAttribute('role', 'button');
+                card.setAttribute('tabindex', '0');
+                card.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        card.click();
+                    }
                 });
             });
 
@@ -7215,8 +7343,8 @@
 </div>
 
 <!-- Botón flotante de búsqueda -->
-<button id="searchFloatBtn" class="search-float-btn" onclick="openSearchModal()">
-    <i class="fas fa-search"></i>
+<button id="searchFloatBtn" class="search-float-btn" type="button" aria-label="Buscar productos" onclick="openSearchModal()">
+    <i class="fas fa-search" aria-hidden="true"></i>
 </button>
 
 
@@ -7226,7 +7354,10 @@
 // ===== MODAL OPEN/CLOSE (Vanilla JS puro, sin dependencias) =====
 function openSearchModal() {
     const modal = document.getElementById('modal-search');
-    if (modal) { modal.classList.add('is-open'); }
+    if (modal) {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+    }
     setTimeout(() => {
         const input = document.getElementById('searchInput');
         if (input) input.focus();
@@ -7234,7 +7365,10 @@ function openSearchModal() {
 }
 function closeSearchModal() {
     const modal = document.getElementById('modal-search');
-    if (modal) { modal.classList.remove('is-open'); }
+    if (modal) {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+    }
 }
 // Cerrar al pulsar Escape
 document.addEventListener('keydown', function(e) {
@@ -7244,8 +7378,6 @@ document.addEventListener('keydown', function(e) {
 document.addEventListener('click', function(e) {
     if (e.target && e.target.classList.contains('modal__overlay')) closeSearchModal();
 });
-
-console.log('🔥 INICIANDO BUSCADADOR FUNCIONAL (VANILLA JS)');
 
 // Base de datos completa de productos LifePlus (111 productos)
 const productosLifePlus = {
@@ -7636,7 +7768,6 @@ function inicializarProductos() {
         });
     }
     todosLosProductos = Array.from(productosPorCodigo.values());
-    console.log(`✅ ${todosLosProductos.length} productos únicos cargados en el sistema de búsqueda`);
 }
 
 // Función de búsqueda principal
@@ -7710,7 +7841,6 @@ function renderizarResultados(resultados) {
     document.querySelectorAll('.search-result-product').forEach(elemento => {
         elemento.addEventListener('click', () => {
             const codigo = elemento.dataset.code;
-            console.log(`🛍️ Producto seleccionado: ${codigo}`);
             abrirFichaProducto(codigo);
         });
 
@@ -7823,52 +7953,13 @@ function configurarEventosBusqueda() {
 
 // Inicialización del buscador
 function inicializarBuscador() {
-    console.log("🔧 Inicializando buscador funcional...");
-
     inicializarProductos();
     configurarEventosBusqueda();
 
     // Forzar visibilidad del botón flotante
     setTimeout(() => {
         const btnBusqueda = document.getElementById('searchFloatBtn');
-        if (btnBusqueda) {
-            btnBusqueda.style.cssText = `
-                position: fixed !important;
-                bottom: 320px !important;
-                right: 25px !important;
-                left: auto !important;
-                width: 65px !important;
-                height: 65px !important;
-                border-radius: 50% !important;
-                background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FDC830 100%) !important;
-                border: none !important;
-                color: white !important;
-                font-size: 1.6rem !important;
-                cursor: pointer !important;
-                z-index: 9998 !important;
-                box-shadow: 0 8px 35px rgba(255, 107, 53, 0.4) !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                transform: scale(1) !important;
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-                outline: none !important;
-            `;
-
-            // Hacer parpadear para confirmar funcionamiento
-            let parpadeo = 0;
-            const intervalo = setInterval(() => {
-                parpadeo++;
-                btnBusqueda.style.transform = parpadeo % 2 === 0 ? 'scale(1.2)' : 'scale(1)';
-                if (parpadeo > 4) {
-                    clearInterval(intervalo);
-                    btnBusqueda.style.transform = 'scale(1)';
-                    console.log("✅ ¡Buscador funcional completamente operativo!");
-                }
-            }, 400);
-        }
+        if (btnBusqueda) btnBusqueda.removeAttribute('style');
     }, 500);
 }
 
@@ -7879,7 +7970,6 @@ if (document.readyState === 'loading') {
     inicializarBuscador();
 }
 
-console.log("🎯 Buscador funcional LifePlus configurado correctamente");
 </script>
 </body>
 </html>
