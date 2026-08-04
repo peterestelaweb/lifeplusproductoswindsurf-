@@ -23,10 +23,6 @@ jobs:
         run: |
           mkdir -p .deploy
           cp index.html .deploy/index.html
-          mkdir -p .deploy/data
-          cp data/catalogo-suiza.js .deploy/data/catalogo-suiza.js
-          mkdir -p .deploy/assets/products
-          cp assets/products/*.jpg .deploy/assets/products/
           printf 'commit=%s\nrun=%s\nbuilt_at=%s\n' \
             '${{ github.sha }}' \
             '${{ github.run_id }}' \
@@ -47,25 +43,14 @@ jobs:
         run: |
           for attempt in 1 2 3 4 5 6; do
             marker="$(curl --fail --silent --show-error --location \
-              --user-agent 'Mozilla/5.0 LifeplusDeployVerifier/1.0' \
-              --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' \
-              --header 'Accept-Language: es-ES,es;q=0.9,de;q=0.8' \
               "https://lifeplusp.peterestela.com/deploy-marker.txt?run=${{ github.run_id }}" || true)"
             html="$(curl --fail --silent --show-error --location --compressed \
-              --user-agent 'Mozilla/5.0 LifeplusDeployVerifier/1.0' \
-              --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' \
-              --header 'Accept-Language: es-ES,es;q=0.9,de;q=0.8' \
               "https://lifeplusp.peterestela.com/?run=${{ github.run_id }}" || true)"
 
             if printf '%s' "$marker" | grep -F '${{ github.sha }}' \
-              && printf '%s' "$html" | grep -F 'Shop-ID SHX4C7' \
-              && printf '%s' "$html" | grep -F '0800 321 026' \
-              && curl --fail --silent --show-error --location --compressed \
-                --user-agent 'Mozilla/5.0 LifeplusDeployVerifier/1.0' \
-                --header 'Accept: text/javascript,*/*;q=0.8' \
-                --header 'Accept-Language: es-ES,es;q=0.9,de;q=0.8' \
-                "https://lifeplusp.peterestela.com/data/catalogo-suiza.js?run=${{ github.run_id }}" \
-                | grep -F 'Lifeplus Pets® Digest'; then
+              && printf '%s' "$html" | grep -F '4173' \
+              && printf '%s' "$html" | grep -F '4174' \
+              && printf '%s' "$html" | grep -F 'Abrir ficha PDF en otra pestaña'; then
               printf '%s\n' "$marker"
               exit 0
             fi
